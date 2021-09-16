@@ -1,0 +1,32 @@
+[
+  {
+    "id" : "bkg_geosearch",
+    "name" : "BKG Geokodierungsdienst Geosearch",
+    "url" : "https://api.viz.berlin.de/bkg_geosearch",
+    "typ" : "GDZ"
+  },
+  {
+    "id" : "bkg_suggest",
+    "name" : "BKG Geokodierungsdienst Suggest",
+    "url" : "https://api.viz.berlin.de/bkg_suggest",
+    "typ" : "GDZ"
+  },
+  {
+    "id" : "nominatim",
+    "name" : "OSM Suche",
+    "url" : "https://nominatim.openstreetmap.org/search?",
+    "typ" : "WFS"
+  },
+  {
+    "id" : "komoot",
+    "name" : "Komoot Photon Suche",
+    "url" : "https://photon.komoot.io/api/?lat=52.5&lon=13.4&osm_tag=!amenity&",
+    "typ" : "WFS"
+  },
+  {
+    "id": "2",
+    "name": "csw",
+    "url": "https://api.viz.berlin.de/csw?service=CSW&version=2.0.2&request=GetRecordById&typeNames=csw:Record&elementsetname=full&id=",
+    "typ": "CSW"
+  }
+]
