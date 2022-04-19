@@ -16,7 +16,7 @@ const Config = {
                 "bezeichnung": "Kartographie und Gestaltung: ",
                 "url": "https://www.berlin.de/sen/uvk/",
                 "alias": "Senatsverwaltung für Umwelt, Verkehr und Klimaschutz Berlin",
-                "alias_mobil": "SenUVK Berlin"
+                "alias_mobil": "SenUMVK Berlin"
             }
         ],
         showVersion: true
