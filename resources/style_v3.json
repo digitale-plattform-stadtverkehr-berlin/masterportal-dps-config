@@ -1,0 +1,1457 @@
+[
+  {
+    "styleId": "TEU",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "status": "substitute_value"
+          }
+        },
+        "style": {
+          "legendValue": "Aktiver TEU Sensor",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_teu_18.png",
+          "clusterImageName": "viz_teu_18.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "style": {
+          "legendValue": "TEU Sensor ohne aktuelle Daten",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_teu_inaktiv_18.png",
+          "clusterImageName": "viz_teu_inaktiv_18.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "MDM-Schleifen",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Messschleife Autobahn aktiv",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schleife_18.png",
+          "clusterImageName": "viz_schleife_18.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "EcoCounter",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "status": "inactive"
+          }
+        },
+        "style": {
+          "legendValue": "Fahrradzählstellen (Inaktiv)",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "eco_counter_inactive.png",
+          "clusterImageName": "eco_counter_inactive.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 1,
+          "imageOffsetY": 1,
+          "clusterImageScale": 1,
+          "clusterImageOffsetY": 1,
+          "clusterTextScale": 1.5,
+          "clusterTextOffsetX": 0,
+          "clusterTextOffsetY": -21
+        }
+      },
+      {
+        "style": {
+          "legendValue": "Fahrradzählstellen",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "eco_counter.png",
+          "clusterImageName": "eco_counter.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 1,
+          "imageOffsetY": 1,
+          "clusterImageScale": 1,
+          "clusterImageOffsetY": 1,
+          "clusterTextScale": 1.5,
+          "clusterTextOffsetX": 0,
+          "clusterTextOffsetY": -21
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ELWIS-Meldungen",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "limLimitationCode": "CAUTIO"
+          },
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Besondere Vorsicht",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_b8gebot.png",
+          "clusterImageName": "viz_schiff_b8gebot.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "messageType": "LOCKING"
+          },
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Sperrung",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_a1sperrung.png",
+          "clusterImageName": "viz_schiff_a1sperrung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "limLimitationCode": "AVADEP"
+          },
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Eingeschränkte Wassertiefe",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_c1einschraenkung.png",
+          "clusterImageName": "viz_schiff_c1einschraenkung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "limLimitationCode": "CLEHEI"
+          },
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Eingeschränkte Höhe",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_c2einschraenkung.png",
+          "clusterImageName": "viz_schiff_c2einschraenkung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "limLimitationCode": "CLEWID"
+          },
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Eingeschränkte Durchfahrtsbreite",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_c3einschraenkung.png",
+          "clusterImageName": "viz_schiff_c3einschraenkung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Schifffahrtsbeschränkungen",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_c4einschraenkung.png",
+          "clusterImageName": "viz_schiff_c4einschraenkung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "sequence": [2,2]
+        },
+        "style": {
+          "legendValue": "Betroffener Abschnitt",
+          "lineStrokeWidth": 3
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Landeswasserstrassen",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "messageType": "OBSTRUCTION"
+          },
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Gefahrenstelle",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_b8gebot.png",
+          "clusterImageName": "viz_schiff_b8gebot.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "messageType": "LOCKING"
+          },
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Sperrung",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_a1sperrung.png",
+          "clusterImageName": "viz_schiff_a1sperrung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "messageType": "NARROWING"
+          },
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Fahrbahnverengung",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_c3einschraenkung.png",
+          "clusterImageName": "viz_schiff_c3einschraenkung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "sequence": [0,1]
+        },
+        "style": {
+          "legendValue": "Schifffahrtsbeschränkungen",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_schiff_c4einschraenkung.png",
+          "clusterImageName": "viz_schiff_c4einschraenkung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "sequence": [2,2]
+        },
+        "style": {
+          "legendValue": "Betroffener Abschnitt",
+          "lineStrokeWidth": 3
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Baustellen_OCIT",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "icon": "sperrung",
+            "is_future": true
+          },
+          "sequence": [0,0]
+        },
+        "style": {
+          "legendValue": "Geplante Sperrung",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "schild_sperrung_grau.png",
+          "clusterImageName": "schild_sperrung_grau.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "icon": "baustelle",
+            "is_future": true
+          },
+          "sequence": [0,0]
+        },
+        "style": {
+          "legendValue": "Geplante Baustelle/Bauarbeiten",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "schild_baustelle_grau.png",
+          "clusterImageName": "schild_baustelle_grau.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "is_future": true
+          },
+          "sequence": [0,0]
+        },
+        "style": {
+          "legendValue": "Geplante sonstige Störungen",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "schild_warnung_grau.png",
+          "clusterImageName": "schild_warnung_grau.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "is_future": true
+          },
+          "sequence": [1,10]
+        },
+        "style": {
+          "legendValue": "Geplanter betroffener Abschnitt",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [96, 96, 96, 1],
+          "circleRadius": 0,
+          "type": "circle"
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "icon": "sperrung"
+          },
+          "sequence": [0,0]
+        },
+        "style": {
+          "legendValue": "Sperrung",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "schild_sperrung.png",
+          "clusterImageName": "schild_sperrung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "icon": "baustelle"
+          },
+          "sequence": [0,0]
+        },
+        "style": {
+          "legendValue": "Baustelle/Bauarbeiten",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "schild_baustelle.png",
+          "clusterImageName": "schild_baustelle.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "sequence": [0,0]
+        },
+        "style": {
+          "legendValue": "Sonstige Störungen",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "schild_warnung.png",
+          "clusterImageName": "schild_warnung.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.8,
+          "clusterImageScale": 0.8,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7
+        }
+      },
+      {
+        "conditions": {
+          "sequence": [1,10]
+        },
+        "style": {
+          "legendValue": "Betroffener Abschnitt",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [180, 40, 40, 1],
+          "circleRadius": 0,
+          "type": "circle"
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "trainstation",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "stationType": "Fernbahnhof"
+          }
+        },
+        "style": {
+          "legendValue": "Fernbahnhof",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_fernbahnhof_32.png",
+          "clusterImageName": "viz_fernbahnhof_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+
+        }
+      },
+      {
+        "style": {
+          "legendValue": "Bahnhof",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_bahnhof_32.png",
+          "clusterImageName": "viz_bahnhof_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "underground",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "U-Bahnhof",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_ubahnhof_32.png",
+          "clusterImageName": "viz_ubahnhof_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "inrix-parkplaetze",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "Kategorie": "Park & Ride"
+          }
+        },
+        "style": {
+          "legendValue": "Parkplatz",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_parkride_32.png",
+          "clusterImageName": "viz_parkride_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Typ": "Tiefgarage"
+          }
+        },
+        "style": {
+          "legendValue": "Parkplatz",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_tiefgarage_32.png",
+          "clusterImageName": "viz_tiefgarage_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      },
+      {
+        "style": {
+          "legendValue": "Parkplatz",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_parkplatz_blue_32.png",
+          "clusterImageName": "viz_parkplatz_blue_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Behindertenparkplätze",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Behindertenparkplatz",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_behindertenparkplatz_32.png",
+          "clusterImageName": "viz_behindertenparkplatz_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 3,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "jelbi-station",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Jelbi Station",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_jelbistation2_32.png",
+          "clusterImageName": "viz_jelbistation2_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "sharenow-vehicles",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Share Now Fahrzeuge",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_sharenow_vehicles_32.png",
+          "clusterImageName": "viz_sharenow_vehicles_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 5,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "nextbike-stations",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Nextbike Stationen",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_nextbike_32.png",
+          "clusterImageName": "viz_nextbike_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 5,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "nextbike-floating",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Nextbike Fahrräder",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_nextbike_floating_32.png",
+          "clusterImageName": "viz_nextbike_floating_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 5,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "trafficlight",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Lichtsignalanlagen",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_ampel_32.png",
+          "clusterImageName": "viz_ampel_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+
+  {
+    "styleId": "infopanel",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Infotafel",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_info3_32.png",
+          "clusterImageName": "viz_info3_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "carsharing",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Carsharing",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_carsharing_32.png",
+          "clusterImageName": "viz_carsharing_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "plslocation",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Parkleitsystem",
+          "type": "icon",
+          "clusterType": "icon",
+          "circleFillColor": [211, 211, 211, 1],
+          "imageName": "viz_parkleitsystem4_32.png",
+          "clusterImageName": "viz_parkleitsystem4_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "differenz",
+    "rules": [
+      {
+        "style": {
+          "lineStrokeColor":[234, 0, 255, 0.8],
+          "lineStrokeWidth":6
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "chargingstation",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Ladestation",
+          "type": "icon",
+          "clusterType": "icon",
+          "imageName": "viz_stecker_32.png",
+          "clusterImageName": "viz_stecker_32.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "U-Bahn Station",
+          "type": "icon",
+          "clusterType": "icon",
+          "imageName": "ubahn.png",
+          "clusterImageName": "ubahn.png",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "imageScale": 0.6667,
+          "clusterImageScale": 0.667,
+          "clusterTextScale": 1.3,
+          "clusterTextOffsetX": 10,
+          "clusterTextOffsetY": 10
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn1",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U1",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [98,173,45, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn2",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U2",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [233,78,15, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn3",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U3",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [0,160,146, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn4",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U4",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [255,213,0, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn5",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U5",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [129,82,56, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn6",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U6",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [132,109,170, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn7",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U7",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [0,155,217, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn8",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U8",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [0,89,154, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "ubahn9",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Linienverlauf U9",
+          "lineStrokeWidth": 5,
+          "lineStrokeColor": [241,135,0, 1]
+        }
+      }
+    ]
+  },  {
+  "styleId": "BLUME",
+  "rules": [
+    {
+      "conditions": {
+        "properties": {
+          "type_of_station": "background",
+          "station_type_of_area": "urban"
+        }
+      },
+      "style": {
+        "legendValue": "Hintergrund",
+        "type": "icon",
+        "imageName": "viz_blume_h.png",
+        "imageOffsetY": 1
+      }
+    },
+    {
+      "conditions": {
+        "properties": {
+          "type_of_station": "traffic",
+          "station_type_of_area": "urban"
+        }
+      },
+      "style": {
+        "legendValue": "Verkehr",
+        "type": "icon",
+        "imageName": "viz_blume_v.png",
+        "imageOffsetY": 1
+      }
+    },
+    {
+      "style": {
+        "legendValue": "Stadtrand",
+        "type": "icon",
+        "imageName": "viz_blume_s.png",
+        "imageOffsetY": 1
+      }
+    }
+  ]
+},
+  {
+    "styleId": "D-Routen",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "D-Routen",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [242,71,38, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Mauerweg",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Mauerweg",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [250,196,8, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Radfernwege",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Radfernwege",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [32,142,219, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Radialrouten",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Radialrouten",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [61,198,110, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Tangentialrouten",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Tangentialrouten",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [138,143,136, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Verkehrsmengen_DTV_2019",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [0, 5001]
+          }
+        },
+        "style": {
+          "legendValue": "bis 5.000",
+          "lineStrokeColor": [0,145,72, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [5001, 10001]
+          }
+        },
+        "style": {
+          "legendValue": "5.001 - 10.000",
+          "lineStrokeColor": [99,198,0, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [10001, 15001]
+          }
+        },
+        "style": {
+          "legendValue": "10.001 - 15.000",
+          "lineStrokeColor": [238,238,0, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [15001, 20001]
+          }
+        },
+        "style": {
+          "legendValue": "15.001 - 20.000",
+          "lineStrokeColor": [255,204,153, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [20001, 30001]
+          }
+        },
+        "style": {
+          "legendValue": "20.001 - 30.000",
+          "lineStrokeColor": [255,153,0, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [30001, 40001]
+          }
+        },
+        "style": {
+          "legendValue": "30.001 - 40.000",
+          "lineStrokeColor": [255,128,128, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [40001, 50001]
+          }
+        },
+        "style": {
+          "legendValue": "40.001 - 50.000",
+          "lineStrokeColor": [255,0,0, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [50001, 60001]
+          }
+        },
+        "style": {
+          "legendValue": "50.001 - 60.000",
+          "lineStrokeColor": [255,9,132, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [60001, 70001]
+          }
+        },
+        "style": {
+          "legendValue": "60.001 - 70.000",
+          "lineStrokeColor": [128,0,128, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [70001, 100001]
+          }
+        },
+        "style": {
+          "legendValue": "70.001 - 100.000",
+          "lineStrokeColor": [78,0,155, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "Dtv": [100001, 1000000]
+          }
+        },
+        "style": {
+          "legendValue": "Über 100.000",
+          "lineStrokeColor": [0,0,64, 1]
+        }
+      },
+      {
+        "style": {
+          "lineStrokeColor": [0,0,255, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "VBB",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "header": "Aufzugsstörung"
+          }
+        },
+        "style": {
+          "legendValue": "Aufzugsstörung",
+          "type": "icon",
+          "imageName": "lift.png",
+          "imageScale": 0.8
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "betreiber": "S-Bahn Berlin GmbH"
+          }
+        },
+        "style": {
+          "legendValue": "Meldungen S-Bahn Berlin",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [0,141,79, 1],
+          "type": "icon",
+          "imageName": "exclamation.png",
+          "imageScale": 0.8
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "betreiber": "S-Bahn Berlin"
+          }
+        },
+        "style": {
+          "legendValue": "Meldungen S-Bahn Berlin",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [0,141,79, 1],
+          "type": "icon",
+          "imageName": "exclamation.png",
+          "imageScale": 0.8
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "betreiber": "BVG"
+          }
+        },
+        "style": {
+          "legendValue": "Meldungen BVG",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [0,79,141, 1],
+          "type": "icon",
+          "imageName": "exclamation.png",
+          "imageScale": 0.8
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "betreiber": "Berliner Verkehrsbetriebe"
+          }
+        },
+        "style": {
+          "legendValue": "Meldungen Berliner Verkehrsbetriebe",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [0,79,141, 1],
+          "type": "icon",
+          "imageName": "exclamation.png",
+          "imageScale": 0.8
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "betreiber": "ViP"
+          }
+        },
+        "style": {
+          "legendValue": "Meldungen ViP",
+          "lineStrokeWidth": 4,
+          "lineStrokeCap": "square",
+          "lineStrokeColor": [0,79,141, 1],
+          "type": "icon",
+          "imageName": "exclamation.png",
+          "imageScale": 0.8
+        }
+      },
+      {
+        "style": {
+          "legendValue": "Störung im Fahrbetrieb",
+          "type": "icon",
+          "imageName": "exclamation.png",
+          "imageScale": 0.8
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "corridors",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "line_id": "ÖPNV"
+          }
+        },
+        "style": {
+          "legendValue": "ÖPNV",
+          "type": "icon",
+          "imageName": "viz_bahnhof_32.png",
+          "imageScale": 0.8
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "line_id": "MIV"
+          }
+        },
+        "style": {
+          "legendValue": "MIV",
+          "lineStrokeWidth": 3,
+          "lineStrokeColor": [10,122,8, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "line_id": "Rad"
+          }
+        },
+        "style": {
+          "legendValue": "Rad",
+          "lineStrokeWidth": 3,
+          "lineStrokeColor": [0,128,255, 1]
+        }
+      }
+    ]
+  }
+]

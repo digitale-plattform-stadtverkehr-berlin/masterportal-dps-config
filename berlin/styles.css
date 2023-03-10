@@ -1,3 +1,99 @@
+/* fullscreen on mobile */
+.fullscreen-button.hidden {
+  display: block !important;
+}
+
 .attributions-wrapper .attributions-view dt {
   color: #333333 !important;
+}
+
+
+:root.dark {
+    --signature-color:black;
+}
+
+:root {
+    --signature-color:white;
+}
+
+
+#portal-footer, .mouse-position, .control-icon, .navbar, .results {
+    background-color: var(--signature-color) !important;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: var(--signature-color) !important;
+    filter: brightness(115%);
+}
+
+
+.legend-window{
+    z-index: 998 !important;
+}
+
+
+/* #root .tabable:hover, ul#tree .tabable:hover, ul#legend-menu .tabable:hover, .portal-title .tabable:hover, #portal-footer a:hover, #root .tabable:hover.btn-select, #root .tabable:hover:active, #root .tabable:hover.active, #root .tabable:hover:checked, #root .tabable:hover::selection, #root .tabable:hover.open, #root .tabable:hover[aria-expanded="true"], ul#tree .tabable:hover.btn-select, ul#tree .tabable:hover:active, ul#tree .tabable:hover.active, ul#tree .tabable:hover:checked, ul#tree .tabable:hover::selection, ul#tree .tabable:hover.open, ul#tree .tabable:hover[aria-expanded="true"], ul#legend-menu .tabable:hover.btn-select, ul#legend-menu .tabable:hover:active, ul#legend-menu .tabable:hover.active, ul#legend-menu .tabable:hover:checked, ul#legend-menu .tabable:hover::selection, ul#legend-menu .tabable:hover.open, ul#legend-menu .tabable:hover[aria-expanded="true"], .portal-title .tabable:hover.btn-select, .portal-title .tabable:hover:active, .portal-title .tabable:hover.active, .portal-title .tabable:hover:checked, .portal-title .tabable:hover::selection, .portal-title .tabable:hover.open, .portal-title .tabable:hover[aria-expanded="true"]{
+    background-color:inherit;
+    color:inherit;
+} */
+
+#root .tabable:focus, ul#tree .tabable:focus, ul#legend-menu .tabable:focus, .portal-title .tabable:focus{
+    outline-color: red !important;
+}
+
+
+.dark .navbar-default .navbar-nav > .open > a, .dark  .navbar-default .navbar-nav > .open > a:hover, .dark  .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #111827 !important;
+    color: lightgrey;
+}
+
+.dark .navbar-default .navbar-nav > li > a{
+    color: lightgrey;
+}
+
+
+.dark #portal-footer a{
+    filter: brightness(150%);
+}
+
+.dark #portal-footer, .dark  #scales .scale-line, .dark  #scales .scale-as-a-ratio{
+    color: lightgrey !important;
+}
+
+.dark #loader {
+    background-color: #111827 !important;
+}
+
+.dark #searchForm input, .dark #searchForm button{
+    background-color: lightgrey;
+}
+
+.dark #searchForm input, .dark #searchForm button, .dark #searchForm .hit, .dark #searchForm .type{
+    filter: invert(1)
+}
+
+.dark #map{
+    filter: brightness(75%);
+}
+
+
+.dark .tool-window-vue, .dark #tool-sidebar-vue, .dark .legend-window{
+    filter: brightness(90%);
+}
+
+.dark #navbarRow, .dark #portal-footer {
+  background-color: #111827;
+}
+
+.dark #portal-footer {
+  background-color: #111827 !important;
+}
+
+.dark #main-nav {
+  background-color: #111827 !important;
+}
+
+/* viz blue instead red for controls */
+.control-icon, .mouse-position {
+  background-color: #1e3a8a !important;
 }

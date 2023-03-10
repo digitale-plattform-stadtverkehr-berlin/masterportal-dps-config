@@ -12,6 +12,18 @@
     "typ" : "GDZ"
   },
   {
+    "id" : "bkg_reverse",
+    "name" : "BKG Geokodierungsdienst Reverse Geosearch",
+    "url" : "https://api.viz.berlin.de/bkg_reverse",
+    "typ" : "BKG"
+  },
+  {
+    "id": "bkg_ors",
+    "name": "BKG Routing Service",
+    "url" : "https://sg.geodatenzentrum.de/web_ors",
+    "typ" : "RoutingService"
+  },
+  {
     "id" : "nominatim",
     "name" : "OSM Suche",
     "url" : "https://nominatim.openstreetmap.org/search?",
