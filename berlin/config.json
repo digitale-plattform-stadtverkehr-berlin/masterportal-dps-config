@@ -1,798 +1,1136 @@
 {
-	"Portalconfig": {
-		"treeType": "custom",
+  "Portalconfig": {
+    "treeType": "custom",
     "tree": {
       "showScaleTooltip": true
     },
-		"searchBar": {
-			"bkg":{
-				"minChars":3,
-				"suggestServiceId": "bkg_suggest",
-				"geosearchServiceId": "bkg_geosearch",
-				"extent":[
-					350000,
-					5780000,
-					440000,
-					5850000
-				],
-				"epsg":"EPSG:25833",
-				"filter":"filter=(typ:*)",
-				"score":0.6
-			},
-			"komoot": {
-				"serviceId": "komoot",
-				"lat": 52.5,
-				"lon": 13.4,
-				"bbox": "12.5,52.05,14.05,52.75"
-			},
-			"visibleVector": {
-				"minChars": 3,
-				"layerTypes": ["WFS", "GeoJSON", "SensorThings"]
-			},
-			"tree": {},
-			"startZoomLevel": 9,
-			"zoomLevel": 9,
-			"placeholder": "Suche"
-		},
-    "layerInformation":{
+    "searchBar": {
+      "bkg": {
+        "minChars": 3,
+        "suggestServiceId": "bkg_suggest",
+        "geosearchServiceId": "bkg_geosearch",
+        "extent": [350000, 5780000, 440000, 5850000],
+        "epsg": "EPSG:25833",
+        "filter": "filter=(typ:*)",
+        "score": 0.6
+      },
+      "komoot": {
+        "serviceId": "komoot",
+        "lat": 52.5,
+        "lon": 13.4,
+        "bbox": "12.5,52.05,14.05,52.75"
+      },
+      "visibleVector": {
+        "minChars": 3,
+        "layerTypes": ["WFS", "GeoJSON", "SensorThings"]
+      },
+      "tree": {},
+      "startZoomLevel": 9,
+      "zoomLevel": 9,
+      "placeholder": "Suche"
+    },
+    "layerInformation": {
       "showMetaDataRevision": false
     },
-		"portalTitle": {
-			"logo": "../resources/img/dps_logo_90x40.png",
-			"link": "https://viz.berlin.de",
-			"toolTip": "Digitale Plattform Stadtverkehr"
-		},
-		"mapView": {
-			"backgroundImage": "../resources/img/backgroundCanvas.jpeg",
-			"startCenter": [
-				390702.983,
-				5819768.573
-			],
-			"options": [
-				{
-					"resolution": 611.4974492763076,
-					"scale": 2311167,
-					"zoomLevel": 0
-				},
-				{
-					"resolution": 305.7487246381551,
-					"scale": 1155583,
-					"zoomLevel": 1
-				},
-				{
-					"resolution": 152.87436231907702,
-					"scale": 577791,
-					"zoomLevel": 2
-				},
-				{
-					"resolution": 76.43718115953851,
-					"scale": 288896,
-					"zoomLevel": 3
-				},
-				{
-					"resolution": 38.21859057976939,
-					"scale": 144448,
-					"zoomLevel": 4
-				},
-				{
-					"resolution": 19.109295289884642,
-					"scale": 72223,
-					"zoomLevel": 5
-				},
-				{
-					"resolution": 9.554647644942321,
-					"scale": 36112,
-					"zoomLevel": 6
-				},
-				{
-					"resolution": 4.7773238224711605,
-					"scale": 18056,
-					"zoomLevel": 7
-				},
-				{
-					"resolution": 2.3886619112355802,
-					"scale": 9028,
-					"zoomLevel": 8
-				},
-				{
-					"resolution": 1.1943309556178034,
-					"scale": 4514,
-					"zoomLevel": 9
-				},
-				{
-					"resolution": 0.5971654778089017,
-					"scale": 2257,
-					"zoomLevel": 10
-				},
-				{
-					"resolution": 0.298582739
-				,
-					"scale": 1128,
-					"zoomLevel": 11
-				},
-				{
-					"resolution": 0.149291369,
-					"scale": 564,
-					"zoomLevel": 12
-				},
-				{
-					"resolution": 0.074645685,
-					"scale": 282,
-					"zoomLevel": 13
-				},
-				{
-					"resolution": 0.037322842,
-					"scale": 141,
-					"zoomLevel": 14
-				}
-			],
-			"extent": [
-				330000,
-				5770000,
-				440000,
-				5850000
-			],
-			"startZoomLevel": 3,
-			"epsg": "EPSG:25833"
-		},
-		"menu": {
-			"tree": {
-				"name": "translate#common:menu.topics"
-			},
-			"tools": {
-				"name": "translate#common:menu.tools.name",
-				"children": {
-					"gfi": {
-						"name": "Informationen abfragen",
-						"active": true,
-						"highlightVectorRules": {
-							"image": { "scale": 1.3 }
-						}
-					},
-					"coordToolkit": {
-						"name": "Koordinatensuche"
-					},
-					"measure": {
-						"name": "Strecke / Fläche messen"
-					},
-					"draw": {
-						"name": "Zeichnen / Schreiben",
-						"glyphicon": "glyphicon-pencil"
-					},
-					"fileImport": {
-						"enableZoomToExtend": true
-					},
-					"addWMS": {
-					},
-					"saveSelection": {
-						"name": "Auswahl speichern"
-					},
-					"routing": {
-						"name": "translate#common:menu.tools.routing",
-						"icon": "bi-signpost-2-fill",
-						"activeRoutingToolOption": "DIRECTIONS",
-						"routingToolOptions": [
-							"DIRECTIONS",
-							"ISOCHRONES"
-						],
-						"download": {
-							"filename": "",
-							"format": "GEOJSON"
-						},
-						"geosearch": {
-							"minChars": 3,
-							"limit": 10,
-							"type": "BKG",
-							"serviceId": "bkg_geosearch"
-						},
-						"geosearchReverse": {
-							"distance": 1000,
-							"filter": "typ:strasse",
-							"type": "BKG",
-							"serviceId": "bkg_reverse"
-						},
-						"directionsSettings": {
-							"type": "ORS",
-							"serviceId": "bkg_ors",
-							"speedProfile": "CAR",
-							"preference": "RECOMMENDED",
-							"styleRoute": {
-								"fillColor": [
-									255,
-									44,
-									0
-								],
-								"width": 6,
-								"highlightColor": [
-									255,
-									255,
-									255
-								],
-								"highlightWidth": 9,
-								"partHighlightColor": [
-									255,
-									255,
-									255
-								],
-								"partHighlightWidth": 3
-							},
-							"styleWaypoint": {
-								"lineColor": [
-									255,
-									127,
-									0
-								],
-								"lineWidth": 4,
-								"fillColor": [
-									255,
-									127,
-									0
-								],
-								"textFillColor": "#000",
-								"textLineColor": "#fff",
-								"textLineWidth": 3,
-								"opacity": 0.3,
-								"radius": 8
-							},
-							"styleAvoidAreas": {
-								"lineColor": [
-									0,
-									127,
-									255
-								],
-								"lineWidth": 2,
-								"fillColor": [
-									0,
-									127,
-									255
-								],
-								"opacity": 0.3,
-								"pointRadius": 8,
-								"pointLineWidth": 4
-							},
-							"batchProcessing": {
-								"enabled": false,
-								"active": false,
-								"limit": 1000,
-								"maximumConcurrentRequests": 3
-							}
-						},
-						"isochronesSettings": {
-							"type": "ORS",
-							"serviceId": "bkg_ors",
-							"speedProfile": "CAR",
-							"isochronesMethodOption": "TIME",
-							"distanceValue": 30,
-							"minDistance": 1,
-							"maxDistance": 400,
-							"timeValue": 30,
-							"minTime": 1,
-							"maxTime": 180,
-							"intervalValue": 15,
-							"minInterval": 3,
-							"maxInterval": 30,
-							"styleCenter": {
-								"lineColor": [
-									255,
-									127,
-									0
-								],
-								"lineWidth": 4,
-								"fillColor": [
-									255,
-									127,
-									0
-								],
-								"opacity": 0.3,
-								"radius": 8
-							},
-							"styleIsochrones": {
-								"lineWidth": 2,
-								"opacity": 0.65,
-								"startColor": [
-									66,
-									245,
-									78
-								],
-								"endColor": [
-									245,
-									66,
-									66
-								]
-							},
-							"batchProcessing": {
-								"enabled": false,
-								"active": false,
-								"limit": 1000,
-								"maximumConcurrentRequests": 3
-							}
-						}
-					}
-				}
-			},
-			"legend": {}
-		},
-		"controls": {
-			"fullScreen": true,
-			"zoom": true,
-			"orientation": {
-				"zoomMode": "once"
-			},
-			"attributions": {
+    "portalTitle": {
+      "logo": "../resources/img/dps_logo_90x40.png",
+      "link": "https://viz.berlin.de",
+      "toolTip": "Digitale Plattform Stadtverkehr"
+    },
+    "mapView": {
+      "backgroundImage": "../resources/img/backgroundCanvas.jpeg",
+      "startCenter": [390702.983, 5819768.573],
+      "options": [
+        {
+          "resolution": 611.4974492763076,
+          "scale": 2311167,
+          "zoomLevel": 0
+        },
+        {
+          "resolution": 305.7487246381551,
+          "scale": 1155583,
+          "zoomLevel": 1
+        },
+        {
+          "resolution": 152.87436231907702,
+          "scale": 577791,
+          "zoomLevel": 2
+        },
+        {
+          "resolution": 76.43718115953851,
+          "scale": 288896,
+          "zoomLevel": 3
+        },
+        {
+          "resolution": 38.21859057976939,
+          "scale": 144448,
+          "zoomLevel": 4
+        },
+        {
+          "resolution": 19.109295289884642,
+          "scale": 72223,
+          "zoomLevel": 5
+        },
+        {
+          "resolution": 9.554647644942321,
+          "scale": 36112,
+          "zoomLevel": 6
+        },
+        {
+          "resolution": 4.7773238224711605,
+          "scale": 18056,
+          "zoomLevel": 7
+        },
+        {
+          "resolution": 2.3886619112355802,
+          "scale": 9028,
+          "zoomLevel": 8
+        },
+        {
+          "resolution": 1.1943309556178034,
+          "scale": 4514,
+          "zoomLevel": 9
+        },
+        {
+          "resolution": 0.5971654778089017,
+          "scale": 2257,
+          "zoomLevel": 10
+        },
+        {
+          "resolution": 0.298582739,
+          "scale": 1128,
+          "zoomLevel": 11
+        },
+        {
+          "resolution": 0.149291369,
+          "scale": 564,
+          "zoomLevel": 12
+        },
+        {
+          "resolution": 0.074645685,
+          "scale": 282,
+          "zoomLevel": 13
+        },
+        {
+          "resolution": 0.037322842,
+          "scale": 141,
+          "zoomLevel": 14
+        }
+      ],
+      "extent": [330000, 5770000, 440000, 5850000],
+      "startZoomLevel": 3,
+      "epsg": "EPSG:25833"
+    },
+    "menu": {
+      "tree": {
+        "name": "translate#common:menu.topics"
+      },
+      "tools": {
+        "name": "translate#common:menu.tools.name",
+        "children": {
+          "gfi": {
+            "name": "Informationen abfragen",
+            "active": true,
+            "highlightVectorRules": {
+              "image": { "scale": 1.3 }
+            }
+          },
+          "coordToolkit": {
+            "name": "Koordinatensuche"
+          },
+          "measure": {
+            "name": "Strecke / Fläche messen"
+          },
+          "draw": {
+            "name": "Zeichnen / Schreiben",
+            "glyphicon": "glyphicon-pencil"
+          },
+          "fileImport": {
+            "enableZoomToExtend": true
+          },
+          "addWMS": {},
+          "saveSelection": {
+            "name": "Auswahl speichern"
+          },
+          "routing": {
+            "name": "translate#common:menu.tools.routing",
+            "icon": "bi-signpost-2-fill",
+            "activeRoutingToolOption": "DIRECTIONS",
+            "routingToolOptions": ["DIRECTIONS", "ISOCHRONES"],
+            "download": {
+              "filename": "",
+              "format": "GEOJSON"
+            },
+            "geosearch": {
+              "minChars": 3,
+              "limit": 10,
+              "type": "BKG",
+              "serviceId": "bkg_geosearch"
+            },
+            "geosearchReverse": {
+              "distance": 1000,
+              "filter": "typ:strasse",
+              "type": "BKG",
+              "serviceId": "bkg_reverse"
+            },
+            "directionsSettings": {
+              "type": "ORS",
+              "serviceId": "bkg_ors",
+              "speedProfile": "CAR",
+              "preference": "RECOMMENDED",
+              "styleRoute": {
+                "fillColor": [255, 44, 0],
+                "width": 6,
+                "highlightColor": [255, 255, 255],
+                "highlightWidth": 9,
+                "partHighlightColor": [255, 255, 255],
+                "partHighlightWidth": 3
+              },
+              "styleWaypoint": {
+                "lineColor": [255, 127, 0],
+                "lineWidth": 4,
+                "fillColor": [255, 127, 0],
+                "textFillColor": "#000",
+                "textLineColor": "#fff",
+                "textLineWidth": 3,
+                "opacity": 0.3,
+                "radius": 8
+              },
+              "styleAvoidAreas": {
+                "lineColor": [0, 127, 255],
+                "lineWidth": 2,
+                "fillColor": [0, 127, 255],
+                "opacity": 0.3,
+                "pointRadius": 8,
+                "pointLineWidth": 4
+              },
+              "batchProcessing": {
+                "enabled": false,
+                "active": false,
+                "limit": 1000,
+                "maximumConcurrentRequests": 3
+              }
+            },
+            "isochronesSettings": {
+              "type": "ORS",
+              "serviceId": "bkg_ors",
+              "speedProfile": "CAR",
+              "isochronesMethodOption": "TIME",
+              "distanceValue": 30,
+              "minDistance": 1,
+              "maxDistance": 400,
+              "timeValue": 30,
+              "minTime": 1,
+              "maxTime": 180,
+              "intervalValue": 15,
+              "minInterval": 3,
+              "maxInterval": 30,
+              "styleCenter": {
+                "lineColor": [255, 127, 0],
+                "lineWidth": 4,
+                "fillColor": [255, 127, 0],
+                "opacity": 0.3,
+                "radius": 8
+              },
+              "styleIsochrones": {
+                "lineWidth": 2,
+                "opacity": 0.65,
+                "startColor": [66, 245, 78],
+                "endColor": [245, 66, 66]
+              },
+              "batchProcessing": {
+                "enabled": false,
+                "active": false,
+                "limit": 1000,
+                "maximumConcurrentRequests": 3
+              }
+            }
+          },
+          "print": {
+            "name": "Karte drucken",
+            "printServiceId": "mapfish_printservice_id",
+            "printAppId": "gdibe",
+            "filename": "Print",
+            "title": "Mein Titel",
+            "version": "mapfish_print_3",
+            "isLegendSelected": false,
+            "gfi": false,
+            "legendText": "Legende",
+            "dpiForPdf": 90
+          },
+          "filter":{
+            "active": false,
+            "name": "Filter",
+            "icon": "bi-funnel-fill",
+            "renderToWindow": false,
+            "deactivateGFI": false,
+            "layerSelectorVisible": true,
+            "layers": [
+              {
+                "layerId": "parkraumdaten_wfs",
+                "title": "Parkraumkartierung",
+                "description": "Bitte beachten Sie, dass die Anzahl der Treffer NICHT gleich der Anzahl der Parkplätze ist. Jedes Polygon, also jeder Treffer, kann unterschiedlich viele Parkplätze beinhalten.",
+                "wmsRefId": "parkraumdaten",
+                "strategy": "active",
+                "extern": true,
+                "download": true,
+                "searchInMapExtent": true,
+                "searchInMapExtentInfo": "Nehmen Sie den Haken bei dem Auswahlfeld „Suche im aktuellen Kartenausschnitt“ weg, wird sich der Zoom der Karte automatisch so anpassen, dass alle Treffer-Polygone im Kartenausschnitt dargestellt werden können. Ist der Haken im Auswahlfeld aktiviert, wird der Zoom nicht automatisch angepasst.",
+                "searchInMapExtentPreselected": true,
+                "filterOnMove": true,
+                "snippets": [
+                  {
+                    "type": "checkbox",
+                    "attrName": "ladesaeule",
+                    "value": ["ja", "nein"]
+                  },
+                  {
+                    "type": "checkbox",
+                    "attrName": "nur_schwerbehinderte",
+                    "value": ["ja", "nein"]
+                  },
+                  {
+                    "type": "checkbox",
+                    "attrName": "carsharing",
+                    "value": ["ja", "nein"]
+                  },
+                  {
+                    "type": "dropdown",
+                    "attrName": "bewirtschaftungszeit",
+                    "showAllValues": true
+                  },
+                  {
+                    "type": "dropdown",
+                    "attrName": "parkgebuehr",
+                    "showAllValues": true
+                  },
+                  {
+                    "type": "dropdown",
+                    "attrName": "beschraenkung",
+                    "showAllValues": true
+                  },
+                  {
+                    "type": "dropdown",
+                    "attrName": "grund_fuer_beschraenkung",
+                    "showAllValues": true
+                  },
+                  {
+                    "type": "dropdown",
+                    "attrName": "geltungszeit_der_beschraenkung",
+                    "showAllValues": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "legend": {}
+    },
+    "controls": {
+      "fullScreen": true,
+      "zoom": true,
+      "orientation": {
+        "zoomMode": "once"
+      },
+      "attributions": {
         "isInitOpenDesktop": false,
         "isInitOpenMobile": false
-    },
-			"mousePosition": true,
-			"toggleMenu": true
-		}
-	},
-	"Themenconfig": {
-		"Hintergrundkarten": {
-			"Layer": [
-				{
-					"id": "Alkis",
+      },
+      "mousePosition": true,
+      "toggleMenu": true
+    }
+  },
+  "Themenconfig": {
+    "Hintergrundkarten": {
+      "Layer": [
+        {
+          "id": "DOP20",
+          "name": "Luftbild 2023",
+          "visibility": false
+        },
+        {
+          "id": "OSM",
+          "name": "Open Street Map",
+          "visibility": false
+        },
+        {
+          "id": "OSM topplus",
+          "name": "Open Street Map Top Plus",
+          "visibility": false
+        },
+        {
+          "id": "WebatlasBrandenburg",
+          "name": "Webatlas",
+          "visibility": false,
+          "transparency": 30
+        },
+        {
+          "id": "basemap_raster_farbe",
+          "visibility": true
+        },
+        {
+          "id": "basemap_raster_grau",
+          "visibility": false
+        },
+        {
+          "id": "bezirke",
+          "name": "Bezirke",
+          "visibility": false,
+          "transparency": 30
+        },
+        {
+					"id": "alkis_bg",
 					"name": "ALKIS",
 					"visibility": false
 				},
-				{
-					"id": "DOP20",
-					"name": "translate#common:berlinLayers.luftbild",
-					"visibility": false
-				},
-				{
-					"id": "OSM",
-					"name": "Open Street Map",
-					"visibility": false
-				},
-				{
-					"id": "WebatlasBrandenburg",
-					"name": "Webatlas",
-					"visibility": true,
-					"transparency": 30
-				},
-				{
-					"id": "bezirke",
-					"name": "Bezirke",
-					"visibility": false,
-					"transparency": 30
-				},
-				{
-					"id": "B96_1",
-					"name": "B96 Kaiserin-Augusta-Str. bis PotsdamerPlatz",
-					"styleId": "corridors",
-					"visibility": false,
-					"isNeverVisibleInTree": true
-				},
-				{
-					"id": "B1_1",
-					"name": "B1/B5 Biesdorf bis Alexanderplatz",
-					"styleId": "corridors",
-					"visibility": false,
-					"isNeverVisibleInTree": true
-				},
-				{
-					"id": "B96_N",
-					"name": "S Lichtenrade bis Hallesches Tor",
-					"styleId": "corridors",
-					"visibility": false,
-					"isNeverVisibleInTree": true
-				},
-				{
-					"id": "B2_1",
-					"name": "B2_Havelchaussee_BhfZoo",
-					"styleId": "corridors",
-					"visibility": false,
-					"isNeverVisibleInTree": true
-				}
-			]
-		},
-		"Fachdaten": {
-			"Ordner": [
-				{
-					"Titel": "Netze",
-					"isFolderSelectable": false,
-					"Ordner": [
-						{
-							"Titel": "Radrouten",
-							"isFolderSelectable": true,
-							"Layer": [
-								{
-									"id": "D-Routen",
-									"name": "D-Routen",
-									"styleId": "D-Routen",
-									"visibility": false
-								},
-								{
-									"id": "Mauerweg",
-									"name": "Mauerweg",
-									"styleId": "Mauerweg",
-									"visibility": false
-								},
-								{
-									"id": "Radfernwege",
-									"name": "Radfernwege",
-									"styleId": "Radfernwege",
-									"visibility": false
-								},
-								{
-									"id": "Radialrouten",
-									"name": "Radialrouten",
-									"styleId": "Radialrouten",
-									"visibility": false
-								},
-								{
-									"id": "Tangentialrouten",
-									"name": "Tangentialrouten",
-									"styleId": "Tangentialrouten",
-									"visibility": false
-								}
-							]
-						},
-						{
-							"Titel": "Verkehrsmengen",
-							"isFolderSelectable": false,
-							"Layer": [
-								{
-									"id": "Verkehrsmengen KFZ",
-									"name": "Verkehrsmengen KFZ",
-									"visibility": false
-								},
-								{
-									"id": "Verkehrsmengen LKW",
-									"name": "Verkehrsmengen LKW",
-									"visibility": false
-								},
-								{
-									"id": "Verkehrsmengen DTV",
-									"name": "DTV nach Fahrzeug-Klassen",
-									"styleId": "Verkehrsmengen_DTV_2019",
-									"visibility": false
-								}
-							]
-						}
-					],
-					"Layer": [
-						{
-							"id": "Aufgrabeverbote",
-							"name": "translate#common:berlinLayers.aufgrabeverbote",
-							"visibility": false
-						},
-						{
-							"id": "Detailnetz",
-							"name": "translate#common:berlinLayers.detailnetz",
-							"visibility": false
-						},
-						{
-							"id": "Fussgaengernetz",
-							"name": "translate#common:berlinLayers.fussgaengernetz",
-							"visibility": false
-						},
-						{
-							"id": "Tempolimits",
-							"name": "translate#common:berlinLayers.tempolimits",
-							"visibility": false
-						},
-						{
-							"id": "radverkehrsnetz",
-							"name": "Radverkehrsnetz",
-							"visibility": false
-						},
-						{
-							"id": "Strassennetz",
-							"name": "translate#common:berlinLayers.step",
-							"visibility": false
-						}
-					]
-				},
-				{
-					"Titel": "Straßenobjekte",
-					"isFolderSelectable": false,
-					"Layer": [
-						{
-							"id": "lichtsignalanlagen",
-							"name": "translate#common:berlinLayers.lichtsignalanlagen",
-							"styleId": "trafficlight",
-							"visibility": false
-						},
-						{
-							"id": "Strassenbefahrung2014",
-							"name": "translate#common:berlinLayers.strassenbefahrung2014",
-							"visibility": false
-						},
-						{
-							"id": "Infotafeln_Concert",
-							"name": "Infotafeln",
-							"styleId": "infopanel",
-							"visibility": false
-						},
-						{
-							"id": "Ladesaeulen",
-							"name": "translate#common:berlinLayers.ladesaeulen",
-							"styleId": "chargingstation",
-							"visibility": false
-						}
-					]
-				},
-				{
-					"Titel": "Umwelt",
-					"isFolderSelectable": false,
-					"Layer": [
-						{
-							"id": "BLUME",
-							"name": "BLUME Messstationen",
-							"styleId": "BLUME",
-							"visibility": false
-						},
-						{
-							"id": "DWD_Wetterwarnungen",
-							"name": "DWD Wetterwarnungen",
-							"visibility": false,
-							"autoRefresh": "600000"
-						},
-						{
-							"id": "DWD_RV-Produkt",
-							"name": "DWD Niederschlagsradar",
-							"visibility": false,
-							"autoRefresh": "600000"
-						},
-						{
-							"id": "umweltverkehrslage-pm10",
-							"name": "Luftqualität - Feinstaub(Partikel)",
-							"visibility": false,
-							"autoRefresh": "60000"
-						},
-						{
-							"id": "umweltverkehrslage-no2",
-							"name": "Luftqualität - Stickstoffdioxid (NO2)",
-							"visibility": false,
-							"autoRefresh": "60000"
-						},
-						{
-							"id": "Umweltzone",
-							"name": "translate#common:berlinLayers.umweltzone",
-							"visibility": false
-						},
+        {
+          "id": "B96_1",
+          "name": "B96 Kaiserin-Augusta-Str. bis PotsdamerPlatz",
+          "styleId": "corridors",
+          "visibility": false,
+          "isNeverVisibleInTree": true
+        },
+        {
+          "id": "B1_1",
+          "name": "B1/B5 Biesdorf bis Alexanderplatz",
+          "styleId": "corridors",
+          "visibility": false,
+          "isNeverVisibleInTree": true
+        },
+        {
+          "id": "B96_N",
+          "name": "S Lichtenrade bis Hallesches Tor",
+          "styleId": "corridors",
+          "visibility": false,
+          "isNeverVisibleInTree": true
+        },
+        {
+          "id": "B2_1",
+          "name": "B2_Havelchaussee_BhfZoo",
+          "styleId": "corridors",
+          "visibility": false,
+          "isNeverVisibleInTree": true
+        }
+      ]
+    },
+    "Fachdaten": {
+      "Ordner": [
+        {
+          "Titel": "Netze",
+          "isFolderSelectable": false,
+          "Ordner": [
             {
-              "id":"luftschadstoff_prognose_stationen_no2",
-              "name":"Luftschadstoff-Prognose NO₂",
+              "Titel": "Radrouten",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "D-Routen",
+                  "name": "D-Routen",
+                  "styleId": "D-Routen",
+                  "visibility": false
+                },
+                {
+                  "id": "Mauerweg",
+                  "name": "Mauerweg",
+                  "styleId": "Mauerweg",
+                  "visibility": false
+                },
+                {
+                  "id": "Radfernwege",
+                  "name": "Radfernwege",
+                  "styleId": "Radfernwege",
+                  "visibility": false
+                },
+                {
+                  "id": "Radialrouten",
+                  "name": "Radialrouten",
+                  "styleId": "Radialrouten",
+                  "visibility": false
+                },
+                {
+                  "id": "Tangentialrouten",
+                  "name": "Tangentialrouten",
+                  "styleId": "Tangentialrouten",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Verkehrsmengen",
+              "isFolderSelectable": false,
+              "Layer": [
+                {
+                  "id": "Verkehrsmengen KFZ",
+                  "name": "Verkehrsmengen KFZ",
+                  "visibility": false
+                },
+                {
+                  "id": "Verkehrsmengen LKW",
+                  "name": "Verkehrsmengen LKW",
+                  "visibility": false
+                },
+                {
+                  "id": "Verkehrsmengen DTV",
+                  "name": "DTV nach Fahrzeug-Klassen",
+                  "styleId": "Verkehrsmengen_DTV_2019",
+                  "visibility": false
+                }
+              ]
+            }
+          ],
+          "Layer": [
+            {
+              "id": "Aufgrabeverbote",
+              "name": "translate#common:berlinLayers.aufgrabeverbote",
               "visibility": false
             },
             {
-              "id":"luftschadstoff_prognose_stationen_pm10",
-              "name":"Luftschadstoff-Prognose PM₁₀",
+              "id": "Detailnetz",
+              "name": "translate#common:berlinLayers.detailnetz",
               "visibility": false
             },
             {
-              "id":"luftschadstoff_prognose_stationen_pm2_5",
-              "name":"Luftschadstoff-Prognose PM₂,₅",
+              "id": "Fussgaengernetz",
+              "name": "translate#common:berlinLayers.fussgaengernetz",
+              "visibility": false
+            },
+            {
+              "id": "Tempolimits",
+              "name": "translate#common:berlinLayers.tempolimits",
+              "visibility": false
+            },
+            {
+              "id": "radverkehrsnetz",
+              "name": "Radverkehrsnetz",
+              "visibility": false
+            },
+            {
+              "id": "Strassennetz",
+              "name": "translate#common:berlinLayers.step",
               "visibility": false
             }
-					]
-				},
-				{
-					"Titel": "ÖPNV, Sharing und Radverkehr",
-					"isFolderSelectable": false,
-					"Ordner": [
-						{
-							"Titel": "U-Bahn",
-							"isFolderSelectable": true,
-							"Layer": [
-								{
-									"id": "UBahnhof",
-									"name": "U-Bahnhöfe",
-									"styleId": "underground",
-									"visibility": false
-								},
-								{
-									"id": "ubahn1",
-									"name": "U1",
-									"styleId": "ubahn1",
-									"visibility": false
-								},
-								{
-									"id": "ubahn2",
-									"name": "U2",
-									"styleId": "ubahn2",
-									"visibility": false
-								},
-								{
-									"id": "ubahn3",
-									"name": "U3",
-									"styleId": "ubahn3",
-									"visibility": false
-								},
-								{
-									"id": "ubahn4",
-									"name": "U4",
-									"styleId": "ubahn4",
-									"visibility": false
-								},
-								{
-									"id": "ubahn5",
-									"name": "U5",
-									"styleId": "ubahn5",
-									"visibility": false
-								},
-								{
-									"id": "ubahn6",
-									"name": "U6",
-									"styleId": "ubahn6",
-									"visibility": false
-								},
-								{
-									"id": "ubahn7",
-									"name": "U7",
-									"styleId": "ubahn7",
-									"visibility": false
-								},
-								{
-									"id": "ubahn8",
-									"name": "U8",
-									"styleId": "ubahn8",
-									"visibility": false
-								},
-								{
-									"id": "ubahn9",
-									"name": "U9",
-									"styleId": "ubahn9",
-									"visibility": false
-								}
-							]
-						}
-					],
-					"Layer": [
-						{
-							"id": "Bahnhof",
-							"name": "translate#common:berlinLayers.bahnhoefe",
-							"styleId": "trainstation",
-							"visibility": false,
-							"clusterDistance": 10
-						},
-						{
-							"id": "jelbi",
-							"name": "Jelbi Stationen",
-							"styleId": "jelbi-station",
-							"visibility": false
-						},
-						{
-							"id": "sharenow",
-							"name": "Share Now Fahrzeuge",
-							"styleId": "sharenow-vehicles",
-							"visibility": false
-						},
-						{
-							"id": "nextbike",
-							"name": "Nextbike Stationen",
-							"styleId": "nextbike-stations",
-							"visibility": false
-						},
-						{
-							"id": "nextbikefloating",
-							"name": "Nextbike Fahrräder",
-							"styleId": "nextbike-floating",
-							"visibility": false
-						},
-						{
-							"id": "oepnvvorrang",
-							"name": "ÖPNV-Vorrangnetz",
-							"visibility": false
-						},
-						{
-							"id": "VBB",
-							"name": "VBB-Verkehrsmeldungen",
-							"styleId": "VBB",
-							"visibility": false
-						},
-						{
-							"id": "Fahrraddiebstaehle",
-							"name": "Fahrraddiebstähle",
-							"visibility": false,
-							"autoRefresh": "3000000"
-						},
-						{
-							"id": "parkverbotszonen",
-							"name": "Parkverbotszonen Mikromobilität",
-							"visibility": false,
-							"autoRefresh": "3000000"
-						}
-					]
-				},
-				{
-					"Titel": "Verkehrslage und –detektion",
-					"isFolderSelectable": false,
-					"Layer": [
-						{
-							"id": "Baustellen_OCIT",
-							"name": "translate#common:berlinLayers.baustellen",
-							"styleId": "Baustellen_OCIT",
-							"visibility": false
-						},
-						{
-							"id": "EcoCounter",
-							"name": "Fahrradzählstellen",
-							"styleId": "EcoCounter",
-							"visibility": false
-						},
-						{
-							"id": "TEU",
-							"name": "Verkehrsdetektion - passiv Infrarot",
-							"styleId": "TEU",
-							"visibility": false
-						},
-						{
-							"id":"DTV_TEUs",
-							"name":"Durchschnittliche tägliche Verkehrsmengen",
-							"visibility": false
-						},
-						{
-							"id": "MDM-Schleifen",
-							"name": "Verkehrsdetektion - Induktionsschleife Autobahn",
-							"styleId": "MDM-Schleifen",
-							"visibility": false
-						},
-						{
-							"id": "Verkehrslage",
-							"name": "Verkehrslage",
-							"visibility": false,
-							"autoRefresh": "300000"
-						},
-						{
-							"id": "Verkehrslage highcontrast",
-							"name": "Verkehrslage Farbfehlsichtigen-Modus",
-							"visibility": false,
-							"autoRefresh": "300000"
-						}
-					]
-				},
-				{
-					"Titel": "Wasserstraßen",
-					"isFolderSelectable": false,
-					"Layer": [
-						{
-							"id": "ELWIS-Meldungen",
-							"name": "translate#common:berlinLayers.wasserstrassen",
-							"styleId": "ELWIS-Meldungen",
-							"visibility": false
-						},
-						{
-							"id": "Landeswasserstrassen",
-							"name": "Meldungen Landeswasserstraßen",
-							"styleId": "Landeswasserstrassen",
-							"visibility": false
-						}
-					]
-				},
-				{
-					"Titel": "Parken",
-					"isFolderSelectable": false,
-					"Layer": [
-						{
-							"id": "Pls-Standorte",
-							"name": "translate#common:berlinLayers.parkleitsystem",
-							"styleId": "plslocation",
-							"visibility": false
-						},
-						{
-							"id": "inrixparken",
-							"name": "Parkplätze",
-							"styleId": "inrix-parkplaetze",
-							"visibility": false
-						},
-						{
-							"id": "Parkraumbewirtschaftung",
-							"name": "translate#common:berlinLayers.parkraumbewirtschaftung",
-							"visibility": false
-						},
-						{
-							"id": "Behindertenparkplätze",
-							"name": "Behindertenparkplätze",
-							"styleId": "Behindertenparkplätze",
-							"visibility": false,
-							"clusterDistance": 30
-						}
-					]
-				}
-			]
-		}
-	}
+          ]
+        },
+        {
+          "Titel": "Straßenobjekte",
+          "isFolderSelectable": false,
+          "Layer": [
+            {
+              "id": "lichtsignalanlagen",
+              "name": "translate#common:berlinLayers.lichtsignalanlagen",
+              "styleId": "trafficlight",
+              "visibility": false
+            },
+            {
+              "id": "Strassenbefahrung2014",
+              "name": "translate#common:berlinLayers.strassenbefahrung2014",
+              "visibility": false
+            },
+            {
+              "id": "Infotafeln_Concert",
+              "name": "Infotafeln",
+              "styleId": "infopanel",
+              "visibility": false
+            },
+            {
+              "id": "Ladesaeulen",
+              "name": "translate#common:berlinLayers.ladesaeulen",
+              "styleId": "chargingstation",
+              "visibility": false
+            },
+            {
+              "id": "streetlights",
+              "name": "Öffentliche Beleuchtung",
+              "visibility": false
+            }
+          ]
+        },
+        {
+          "Titel": "Umwelt",
+          "isFolderSelectable": false,
+          "Ordner": [
+            {
+              "Titel": "Vorhersage der stündlichen Luftschadstoffbelastung an Hauptstraßen",
+              "isFolderSelectable": false,
+              "Layer": [
+                {
+                  "id": "luftschadstoff_prognose_lines_no2",
+                  "name": "Vorhersage für Stickstoffdioxid NO₂",
+                  "visibility": false
+                },
+                {
+                  "id": "luftschadstoff_prognose_lines_pm10",
+                  "name": "Vorhersage für Feinstaub PM₁₀",
+                  "visibility": false
+                },
+                {
+                  "id": "luftschadstoff_prognose_lines_pm2_5",
+                  "name": "Vorhersage für Feinstaub PM₂,₅",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Vorhersage der täglichen Luftschadstoffbelastung in lebensweltlich orientierten Räumen (LOR)",
+              "isFolderSelectable": false,
+              "Layer": [
+                {
+                  "id": "luftschadstoff_prognose_lor_no2",
+                  "name": "Vorhersage für Stickstoffdioxid NO₂",
+                  "visibility": false,
+                  "transparency": 40
+                },
+                {
+                  "id": "luftschadstoff_prognose_lor_pm10",
+                  "name": "Vorhersage für Feinstaub PM₁₀",
+                  "visibility": false,
+                  "transparency": 40
+                },
+                {
+                  "id": "luftschadstoff_prognose_lor_pm2_5",
+                  "name": "Luftschadstoff-Prognose LOR PM₂,₅",
+                  "visibility": false,
+                  "transparency": 40
+                }
+              ]
+            }
+          ],
+          "Layer": [
+            {
+              "id": "BLUME",
+              "name": "BLUME Messstationen",
+              "styleId": "BLUME",
+              "visibility": false
+            },
+            {
+              "id": "DWD_Wetterwarnungen",
+              "name": "DWD Wetterwarnungen",
+              "visibility": false,
+              "autoRefresh": "600000"
+            },
+            {
+              "id": "DWD_RV-Produkt",
+              "name": "DWD Niederschlagsradar",
+              "visibility": false,
+              "autoRefresh": "600000"
+            },
+            {
+              "id": "umweltverkehrslage-pm10",
+              "name": "Luftqualität - Feinstaub(Partikel)",
+              "visibility": false,
+              "autoRefresh": "60000"
+            },
+            {
+              "id": "umweltverkehrslage-no2",
+              "name": "Luftqualität - Stickstoffdioxid (NO2)",
+              "visibility": false,
+              "autoRefresh": "60000"
+            },
+            {
+              "id": "Umweltzone",
+              "name": "translate#common:berlinLayers.umweltzone",
+              "visibility": false
+            },
+            {
+              "id": "baumbestand",
+              "name": "Baumbestand",
+              "visibility": false
+            }
+          ]
+        },
+        {
+          "Titel": "ÖPNV, Sharing und Radverkehr",
+          "isFolderSelectable": false,
+          "Ordner": [
+            {
+              "Titel": "U-Bahn",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "UBahnhof",
+                  "name": "U-Bahnhöfe",
+                  "styleId": "underground",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn1",
+                  "name": "U1",
+                  "styleId": "ubahn1",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn2",
+                  "name": "U2",
+                  "styleId": "ubahn2",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn3",
+                  "name": "U3",
+                  "styleId": "ubahn3",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn4",
+                  "name": "U4",
+                  "styleId": "ubahn4",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn5",
+                  "name": "U5",
+                  "styleId": "ubahn5",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn6",
+                  "name": "U6",
+                  "styleId": "ubahn6",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn7",
+                  "name": "U7",
+                  "styleId": "ubahn7",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn8",
+                  "name": "U8",
+                  "styleId": "ubahn8",
+                  "visibility": false
+                },
+                {
+                  "id": "ubahn9",
+                  "name": "U9",
+                  "styleId": "ubahn9",
+                  "visibility": false
+                }
+              ]
+            }
+          ],
+          "Layer": [
+            {
+              "id": "Bahnhof",
+              "name": "translate#common:berlinLayers.bahnhoefe",
+              "styleId": "trainstation",
+              "visibility": false,
+              "clusterDistance": 10
+            },
+            {
+              "id": "jelbi",
+              "name": "Jelbi Stationen",
+              "styleId": "jelbi-station",
+              "visibility": false
+            },
+            {
+              "id": "sharenow",
+              "name": "Share Now Fahrzeuge",
+              "styleId": "sharenow-vehicles",
+              "visibility": false
+            },
+            {
+              "id": "nextbike",
+              "name": "Nextbike Stationen",
+              "styleId": "nextbike-stations",
+              "visibility": false
+            },
+            {
+              "id": "nextbikefloating",
+              "name": "Nextbike Fahrräder",
+              "styleId": "nextbike-floating",
+              "visibility": false
+            },
+            {
+              "id": "oepnvvorrang",
+              "name": "ÖPNV-Vorrangnetz",
+              "visibility": false
+            },
+            {
+              "id": "VBB",
+              "name": "VBB-Verkehrsmeldungen",
+              "styleId": "VBB",
+              "visibility": false
+            },
+            {
+              "id": "Fahrraddiebstaehle",
+              "name": "Fahrraddiebstähle",
+              "visibility": false,
+              "autoRefresh": "3000000"
+            },
+            {
+              "id": "parkverbotszonen",
+              "name": "Parkverbotszonen Mikromobilität",
+              "visibility": false,
+              "autoRefresh": "3000000"
+            },
+            {
+              "id": "mikromob_abstell",
+              "name": "Abstellflächen für Mikromobilitätsangebote",
+              "styleId": "mikromob_abstell",
+              "gfiAttributes": {
+                "gisid": "Technischer Schlüssel",
+                "typ": "Typ",
+                "beschreibung": "Beschreibung",
+                "name": "Name",
+                "gem": "Bezirksnummer",
+                "namgem": "Bezirksname"
+              }
+            }
+          ]
+        },
+        {
+          "Titel": "Stauschwerpunkte",
+          "isFolderSelectable": false,
+          "Ordner": [
+            {
+              "Titel": "Stauschwerpunkt 1 - Karl-Marx-Allee",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_1",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_1",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_1",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 2 - Karl-Marx-Straße",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_2",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_2",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_2",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 3 - Puschkinallee",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_3",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_3",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_3",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 4 - A114 Zubringer",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_4",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_4",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_4",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 5 - B1/B5 stadteinwärts",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_5",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_5",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_5",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 6 - B2 stadteinwärts",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_6",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_6",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_6",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 7 - Treskowallee",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_7",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_7",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_7",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 8 - B96a stadtauswärts",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_8",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_8",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_8",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 9 - Tempelhofer Damm",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_9",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_9",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_9",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            },
+            {
+              "Titel": "Stauschwerpunkt 10 - Landsberger Allee",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "stauschwerpunkte_line_10",
+                  "name": "Verlauf des Stau's",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_starts_10",
+                  "name": "Startorte von Stauteilnehmern",
+                  "visibility": false
+                },
+                {
+                  "id": "stauschwerpunkte_polygon_ziele_10",
+                  "name": "Zielorte von Stauteilnehmern",
+                  "visibility": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Titel": "Verkehrslage und –detektion",
+          "isFolderSelectable": false,
+          "Layer": [
+            {
+              "id": "Baustellen_OCIT",
+              "name": "translate#common:berlinLayers.baustellen",
+              "styleId": "Baustellen_OCIT",
+              "visibility": false
+            },
+            {
+              "id": "EcoCounter",
+              "name": "Fahrradzählstellen",
+              "styleId": "EcoCounter",
+              "visibility": false
+            },
+            {
+              "id": "TEU",
+              "name": "Verkehrsdetektion - passiv Infrarot",
+              "styleId": "TEU",
+              "visibility": false,
+              "clusterDistance": 10
+            },
+            {
+              "id": "DTV_TEUs",
+              "name": "Verkehrsdetektion - Tagesmittel im Jahresvergleich",
+              "visibility": false
+            },
+            {
+              "id": "MDM-Schleifen",
+              "name": "Verkehrsdetektion - Induktionsschleife Autobahn",
+              "styleId": "MDM-Schleifen",
+              "visibility": false
+            },
+            {
+              "id": "Verkehrslage",
+              "name": "Verkehrslage",
+              "visibility": false,
+              "autoRefresh": "300000"
+            },
+            {
+              "id": "Verkehrslage highcontrast",
+              "name": "Verkehrslage Farbfehlsichtigen-Modus",
+              "visibility": false,
+              "autoRefresh": "300000"
+            }
+          ]
+        },
+        {
+          "Titel": "Wasserstraßen",
+          "isFolderSelectable": false,
+          "Layer": [
+            {
+              "id": "ELWIS-Meldungen",
+              "name": "translate#common:berlinLayers.wasserstrassen",
+              "styleId": "ELWIS-Meldungen",
+              "visibility": false
+            },
+            {
+              "id": "Landeswasserstrassen",
+              "name": "Meldungen Landeswasserstraßen",
+              "styleId": "Landeswasserstrassen",
+              "visibility": false
+            }
+          ]
+        },
+        {
+          "Titel": "Parken",
+          "isFolderSelectable": false,
+          "Ordner": [
+            {
+              "Titel": "Parkraumkartierung",
+              "isFolderSelectable": true,
+              "Layer": [
+                {
+                  "id": "parkraumdaten",
+                  "name": "Parkraumkartierung",
+                  "filterRefId": 0,
+                  "visibility": false
+                },
+                {
+                  "id": "parkraumdaten_bezirke",
+                  "name": "Bezirksgrenzen",
+                  "visibility": false
+                },
+                {
+                  "id": "parkraumdaten_parkraumbewirtschaftung",
+                  "name": "Parkzonengrenzen",
+                  "visibility": false
+                },
+                {
+                  "id": "parkraumdaten_umweltzone",
+                  "name": "Umweltzonengrenzen",
+                  "visibility": false
+                }
+              ]
+            }
+          ],
+          "Layer": [
+            {
+              "id": "Pls-Standorte",
+              "name": "translate#common:berlinLayers.parkleitsystem",
+              "styleId": "plslocation",
+              "visibility": false
+            },
+            {
+              "id": "inrixparken",
+              "name": "Parkplätze",
+              "styleId": "inrix-parkplaetze",
+              "visibility": false
+            },
+            {
+              "id": "Parkraumbewirtschaftung",
+              "name": "translate#common:berlinLayers.parkraumbewirtschaftung",
+              "styleId": "Parkraumbewirtschaftung",
+              "visibility": false
+            },
+            {
+              "id": "Behindertenparkplätze",
+              "name": "Behindertenparkplätze",
+              "styleId": "Behindertenparkplätze",
+              "visibility": false,
+              "clusterDistance": 30
+            },
+            {
+              "id": "parkraumdaten_wfs",
+              "name": "Parkraumkartierung gefiltert",
+              "filterRefId": 0,
+              "styleId": "Parkraumdaten",
+              "visibility": false,
+              "isNeverVisibleInTree": true
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

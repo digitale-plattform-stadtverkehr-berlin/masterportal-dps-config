@@ -40,5 +40,11 @@
     "name": "csw",
     "url": "https://api.viz.berlin.de/csw?service=CSW&version=2.0.2&request=GetRecordById&typeNames=csw:Record&elementsetname=full&id=",
     "typ": "CSW"
+  },
+  {
+    "id": "mapfish_printservice_id",
+    "name": "Mapfish Print Service",
+    "url" : "https://gdi.berlin.de/services/printing/",
+    "typ" : "PrintService"
   }
 ]

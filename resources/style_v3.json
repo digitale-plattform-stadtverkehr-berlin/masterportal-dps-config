@@ -268,7 +268,8 @@
         },
         "style": {
           "legendValue": "Betroffener Abschnitt",
-          "lineStrokeWidth": 3
+          "lineStrokeWidth": 3,
+          "lineStrokeColor": [255, 0, 0, 1]
         }
       }
     ]
@@ -375,7 +376,8 @@
         },
         "style": {
           "legendValue": "Betroffener Abschnitt",
-          "lineStrokeWidth": 3
+          "lineStrokeWidth": 3,
+          "lineStrokeColor": [255, 0, 0, 1]
         }
       }
     ]
@@ -1298,11 +1300,6 @@
           "legendValue": "Über 100.000",
           "lineStrokeColor": [0,0,64, 1]
         }
-      },
-      {
-        "style": {
-          "lineStrokeColor": [0,0,255, 1]
-        }
       }
     ]
   },
@@ -1424,8 +1421,11 @@
         "style": {
           "legendValue": "ÖPNV",
           "type": "icon",
-          "imageName": "viz_bahnhof_32.png",
-          "imageScale": 0.8
+          "imageName": "viz_fernbahnhof_32.png",
+          "imageScale": 0.8,
+          "labelField": "line_id",
+          "textScale": 1,
+          "textFillColor": [255,0,0, 1]
         }
       },
       {
@@ -1437,7 +1437,9 @@
         "style": {
           "legendValue": "MIV",
           "lineStrokeWidth": 3,
-          "lineStrokeColor": [10,122,8, 1]
+          "lineStrokeColor": [10,122,8, 1],
+          "labelField": "line_id",
+          "textScale": 1
         }
       },
       {
@@ -1450,6 +1452,175 @@
           "legendValue": "Rad",
           "lineStrokeWidth": 3,
           "lineStrokeColor": [0,128,255, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Parkraumbewirtschaftung",
+    "rules": [
+      {
+        "style": {
+          "legendValue": "Parkzone",
+          "labelField": "parkzone",
+          "polygonStrokeWidth": 3,
+          "polygonStrokeColor": [223, 45, 39, 1],
+          "polygonFillColor": [255, 255, 0, 0.4],
+          "textFillColor":  [223, 45, 39, 1],
+          "textScale": 1.5,
+          "textStrokeWidth": 1,
+          "textOffsetX": -1,
+          "textOffsetY": 0
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "Parkraumdaten",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "Andere (Restriktion)"
+          }
+        },
+        "style": {
+          "legendValue": "Andere Einschränkungen",
+          "polygonFillColor": [7, 202, 205, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [7, 202, 205, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "Bussonderfahrstreifen"
+          }
+        },
+        "style": {
+          "legendValue": "Bussonderfahrstreifen",
+          "polygonFillColor": [184, 5, 150, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [184, 5, 150, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "Bussonderfahrstreifen;Ladezone"
+          }
+        },
+        "style": {
+          "legendValue": "Bussonderfahrstreifen und/oder Ladezone",
+          "polygonFillColor": [130, 0, 186, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [130, 0, 186, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "Ladezone"
+          }
+        },
+        "style": {
+          "legendValue": "Ladezone",
+          "polygonFillColor": [165, 75, 15, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [165, 75, 15, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "Ladezone;Andere (Restriktion)"
+          }
+        },
+        "style": {
+          "legendValue": "Ladezone und/oder Andere Einschränkungen",
+          "polygonFillColor": [246, 87, 5, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [246, 87, 5, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "Ladezone;Taxi"
+          }
+        },
+        "style": {
+          "legendValue": "Ladezone und/oder Taxi",
+          "polygonFillColor": [255, 158, 1, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [255, 158, 1, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "Polizeifahrzeuge"
+          }
+        },
+        "style": {
+          "legendValue": "Polizeifahrzeuge",
+          "polygonFillColor": [19, 102, 255, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [19, 102, 255, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "Taxi"
+          }
+        },
+        "style": {
+          "legendValue": "Taxi",
+          "polygonFillColor": [246, 210, 46, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [246, 210, 46, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "grund_fuer_beschraenkung": "keine Einschränkung"
+          }
+        },
+        "style": {
+          "legendValue": "keine Einschränkung",
+          "polygonFillColor": [88, 121, 119, 1],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [88, 121, 119, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "mikromob_abstell",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "beschreibung": "JELBI"
+          }
+        },
+        "style": {
+          "legendValue": "von BVG/Jelbi betriebene Abstellfläche für Mikromobilität",
+          "circleStrokeWidth": 0,
+          "circleStrokeColor": [0,0,0,0],
+          "circleRadius": 4,
+          "circleFillColor": [248, 237, 69, 1]
+        }
+      },
+      {
+        "style": {
+          "legendValue": "bezirklich angeordnete Abstellfläche für Mikromobilität",
+          "circleStrokeWidth": 0,
+          "circleStrokeColor": [0,0,0,0],
+          "circleRadius": 4,
+          "circleFillColor": [53, 122, 93, 1]
         }
       }
     ]
