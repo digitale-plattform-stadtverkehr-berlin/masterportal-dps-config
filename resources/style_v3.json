@@ -470,6 +470,8 @@
           "legendValue": "Geplanter betroffener Abschnitt",
           "lineStrokeWidth": 5,
           "lineStrokeColor": [96, 96, 96, 1],
+          "lineStrokeDash": [5, 8],
+          "lineStrokeCap": "butt",
           "circleRadius": 0,
           "type": "circle"
         }
@@ -551,6 +553,8 @@
           "legendValue": "Betroffener Abschnitt",
           "lineStrokeWidth": 5,
           "lineStrokeColor": [180, 40, 40, 1],
+          "lineStrokeDash": [5, 8],
+          "lineStrokeCap": "butt",
           "circleRadius": 0,
           "type": "circle"
         }
@@ -1457,25 +1461,6 @@
     ]
   },
   {
-    "styleId": "Parkraumbewirtschaftung",
-    "rules": [
-      {
-        "style": {
-          "legendValue": "Parkzone",
-          "labelField": "parkzone",
-          "polygonStrokeWidth": 3,
-          "polygonStrokeColor": [223, 45, 39, 1],
-          "polygonFillColor": [255, 255, 0, 0.4],
-          "textFillColor":  [223, 45, 39, 1],
-          "textScale": 1.5,
-          "textStrokeWidth": 1,
-          "textOffsetX": -1,
-          "textOffsetY": 0
-        }
-      }
-    ]
-  },
-  {
     "styleId": "Parkraumdaten",
     "rules": [
       {
@@ -1621,6 +1606,279 @@
           "circleStrokeColor": [0,0,0,0],
           "circleRadius": 4,
           "circleFillColor": [53, 122, 93, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "mikromob_abstell_temp",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "spieltag": false
+          }
+        },
+        "style": {
+          "legendValue": "temporäre Abstellflächen",
+          "polygonFillColor": [0, 0, 255, 0.4],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [0, 0, 255, 1]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "spieltag": true
+          }
+        },
+        "style": {
+          "legendValue": "temporäre Abstellflächen an Spieltagen",
+          "polygonFillColor": [150, 150, 255, 0.4],
+          "polygonStrokeWidth": 4,
+          "polygonStrokeColor": [150, 150, 255, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "thermiCam",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "status": "active"
+          }
+        },
+        "style": {
+          "legendValue": "Aktive Wärmebildkamera",
+          "type": "circle",
+          "clusterType": "circle",
+          "circleFillColor": [255, 255, 0, 1],
+          "circleRadius": 5,
+          "circleStrokeColor": [0, 0, 0, 1],
+          "circleStrokeWidth": 1,
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7,
+          "clusterCircleFillColor": [255, 255, 0, 1],
+          "clusterCircleRadius": 7,
+          "clusterCircleStrokeColor": [0, 0, 0, 1]
+        }
+      },
+      {
+        "style": {
+          "legendValue": "Wärmebildkamera ohne aktuelle Daten",
+          "type": "circle",
+          "clusterType": "circle",
+          "circleFillColor": [255, 255, 0, 1],
+          "circleRadius": 5,
+          "circleStrokeColor": [255, 0, 0, 1],
+          "circleStrokeWidth": 1,
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "clusterTextScale": 1.2,
+          "clusterTextOffsetX": 7,
+          "clusterTextOffsetY": 7,
+          "clusterCircleFillColor": [255, 255, 0, 1],
+          "clusterCircleRadius": 7,
+          "clusterCircleStrokeColor": [255, 0, 0, 1]
+        }
+      }
+    ]
+  },
+  {
+    "styleId": "chargecloud",
+    "rules": [
+      {
+        "conditions": {
+          "properties": {
+            "type": "ac"
+          }
+        },
+        "style": {
+          "legendValue": "Ladestation",
+          "type": "NOMINAL",
+          "scalingShape": "CIRCLESEGMENTS",
+          "scalingAttribute": "status",
+          "scalingValues": {
+            "Verfügbar":[77, 135, 37, 1],
+            "Belegt":[180, 135, 0, 1],
+            "Außer Betrieb/Gestört":[116, 116, 116, 1]
+          },
+          "scalingValueDefaultColor": [0, 0, 0, 1],
+          "circleSegmentsRadius": 18,
+          "circleSegmentsStrokeWidth": 5,
+          "circleSegmentsGap": 10,
+          "circleSegmentsBackgroundColor": [255, 255, 255, 1],
+          "imageName": "chargecloud_ac.png",
+          "clusterType": "circle",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "clusterTextScale": 1.5,
+          "clusterCircleFillColor": [255, 255, 0, 1],
+          "clusterCircleRadius": 10,
+          "clusterCircleStrokeColor": [255, 255, 0, 0.25]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "type": "dc"
+          }
+        },
+        "style": {
+          "legendValue": "Ladestation",
+          "type": "NOMINAL",
+          "scalingShape": "CIRCLESEGMENTS",
+          "scalingAttribute": "status",
+          "scalingValues": {
+            "Verfügbar":[77, 135, 37, 1],
+            "Belegt":[180, 135, 0, 1],
+            "Außer Betrieb/Gestört":[116, 116, 116, 1]
+          },
+          "scalingValueDefaultColor": [0, 0, 0, 1],
+          "circleSegmentsRadius": 18,
+          "circleSegmentsStrokeWidth": 5,
+          "circleSegmentsGap": 10,
+          "circleSegmentsBackgroundColor": [255, 255, 255, 1],
+          "imageName": "chargecloud_dc.png",
+          "clusterType": "circle",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "clusterTextScale": 1.5,
+          "clusterCircleFillColor": [255, 255, 0, 1],
+          "clusterCircleRadius": 10,
+          "clusterCircleStrokeColor": [255, 255, 0, 0.25]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "type": "ac_ac"
+          }
+        },
+        "style": {
+          "legendValue": "Ladestation",
+          "type": "NOMINAL",
+          "scalingShape": "CIRCLESEGMENTS",
+          "scalingAttribute": "status",
+          "scalingValues": {
+            "Verfügbar":[77, 135, 37, 1],
+            "Belegt":[180, 135, 0, 1],
+            "Außer Betrieb/Gestört":[116, 116, 116, 1]
+          },
+          "scalingValueDefaultColor": [0, 0, 0, 1],
+          "circleSegmentsRadius": 18,
+          "circleSegmentsStrokeWidth": 5,
+          "circleSegmentsGap": 10,
+          "circleSegmentsBackgroundColor": [255, 255, 255, 1],
+          "imageName": "chargecloud_ac_ac.png",
+          "clusterType": "circle",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "clusterTextScale": 1.5,
+          "clusterCircleFillColor": [255, 255, 0, 1],
+          "clusterCircleRadius": 10,
+          "clusterCircleStrokeColor": [255, 255, 0, 0.25]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "type": "dc_dc"
+          }
+        },
+        "style": {
+          "legendValue": "Ladestation",
+          "type": "NOMINAL",
+          "scalingShape": "CIRCLESEGMENTS",
+          "scalingAttribute": "status",
+          "scalingValues": {
+            "Verfügbar":[77, 135, 37, 1],
+            "Belegt":[180, 135, 0, 1],
+            "Außer Betrieb/Gestört":[116, 116, 116, 1]
+          },
+          "scalingValueDefaultColor": [0, 0, 0, 1],
+          "circleSegmentsRadius": 18,
+          "circleSegmentsStrokeWidth": 5,
+          "circleSegmentsGap": 10,
+          "circleSegmentsBackgroundColor": [255, 255, 255, 1],
+          "imageName": "chargecloud_dc_dc.png",
+          "clusterType": "circle",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "clusterTextScale": 1.5,
+          "clusterCircleFillColor": [255, 255, 0, 1],
+          "clusterCircleRadius": 10,
+          "clusterCircleStrokeColor": [255, 255, 0, 0.25]
+        }
+      },
+      {
+        "conditions": {
+          "properties": {
+            "type": "dc_ac"
+          }
+        },
+        "style": {
+          "legendValue": "Ladestation",
+          "type": "NOMINAL",
+          "scalingShape": "CIRCLESEGMENTS",
+          "scalingAttribute": "status",
+          "scalingValues": {
+            "Verfügbar":[77, 135, 37, 1],
+            "Belegt":[180, 135, 0, 1],
+            "Außer Betrieb/Gestört":[116, 116, 116, 1]
+          },
+          "scalingValueDefaultColor": [0, 0, 0, 1],
+          "circleSegmentsRadius": 18,
+          "circleSegmentsStrokeWidth": 5,
+          "circleSegmentsGap": 10,
+          "circleSegmentsBackgroundColor": [255, 255, 255, 1],
+          "imageName": "chargecloud_dc_ac.png",
+          "clusterType": "circle",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "clusterTextScale": 1.5,
+          "clusterCircleFillColor": [255, 255, 0, 1],
+          "clusterCircleRadius": 10,
+          "clusterCircleStrokeColor": [255, 255, 0, 0.25]
+        }
+      },
+      {
+        "style": {
+          "legendValue": "Ladestation",
+          "type": "NOMINAL",
+          "scalingShape": "CIRCLESEGMENTS",
+          "scalingAttribute": "status",
+          "scalingValues": {
+            "Verfügbar":[77, 135, 37, 1],
+            "Belegt":[180, 135, 0, 1],
+            "Außer Betrieb/Gestört":[116, 116, 116, 1]
+          },
+          "scalingValueDefaultColor": [0, 0, 0, 1],
+          "circleSegmentsRadius": 18,
+          "circleSegmentsStrokeWidth": 5,
+          "circleSegmentsGap": 10,
+          "circleSegmentsBackgroundColor": [255, 255, 255, 1],
+          "imageName": "chargecloud_ac.png",
+          "clusterType": "circle",
+          "clusterTextFillColor": [51 ,51, 51, 1],
+          "clusterTextStrokeColor": [255,255,255, 1],
+          "clusterTextStrokeWidth": 2,
+          "clusterTextScale": 1.5,
+          "clusterCircleFillColor": [255, 255, 0, 1],
+          "clusterCircleRadius": 10,
+          "clusterCircleStrokeColor": [255, 255, 0, 0.25]
         }
       }
     ]

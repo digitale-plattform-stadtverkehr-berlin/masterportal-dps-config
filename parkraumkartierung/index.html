@@ -8,13 +8,13 @@
     <meta name="mobile-web-app-capable" content="yes">
 
     <title>Digitale Plattform Stadtverkehr - Berlin</title> <!-- enter your own Portal Title for the website at this -->
-    <link rel="stylesheet" href="../mastercode/2_38_0_2.38.0_last_change_at_2023-10-17__18-26-07/css/masterportal.css">
+    <link rel="stylesheet" href="../mastercode/2_42_0_2.42.0_last_change_at_2024-12-10__14-52-35/css/masterportal.css">
     <link rel="stylesheet" href="styles.css"> <!-- Here you can configure your own fonts -->
     <script type="text/javascript">
         const observer = new MutationObserver(function() {
             var container=document.querySelector('#masterportal-container')
             if (container){
-                var sessionurl="https://sg.geodatenzentrum.de/gdz_getSession";
+                var sessionurl="https://sgx.geodatenzentrum.de/gdz_getSession";
                 var appid="8d2cf7fe-14c0-675a-3c60-5af92cfa13d6";
                 var domain="viz.berlin.de";
                 var restserviceid="bkg_ors";
@@ -23,7 +23,7 @@
                     var restconf=container.__vue__.$store.state.restConf;
                     restconf.forEach(item => {
                         if (item.id==restserviceid){
-                            item.url="https://sg.geodatenzentrum.de/web_ors__"+sessionid;
+                            item.url="https://sgx.geodatenzentrum.de/web_ors__"+sessionid;
                         }
                     });
                 });
@@ -46,9 +46,9 @@
         </div>
         <div id="loader-spinner-itself" class="default"></div>
     </div>
-    <div id="generic-masterportal-logo"><img src="../mastercode/2_38_0_2.38.0_last_change_at_2023-10-17__18-26-07/img/Logo_Masterportal.svg"><!-- This logo should not be changed, as it is a central part of the Masterportal --></div>
+    <div id="generic-masterportal-logo"><img src="../mastercode/2_42_0_2.42.0_last_change_at_2024-12-10__14-52-35/img/Logo_Masterportal.svg"><!-- This logo should not be changed, as it is a central part of the Masterportal --></div>
 </div>
 
-<script type="text/javascript" src="../mastercode/2_38_0_2.38.0_last_change_at_2023-10-17__18-26-07/js/masterportal.js"></script>
+<script type="text/javascript" src="../mastercode/2_42_0_2.42.0_last_change_at_2024-12-10__14-52-35/js/masterportal.js"></script>
 </body>
 </html>

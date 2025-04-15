@@ -1,0 +1,333 @@
+{
+  "Portalconfig": {
+    "treeType": "custom",
+    "tree": {
+      "showScaleTooltip": true
+    },
+    "searchBar": {
+      "bkg": {
+        "minChars": 3,
+        "suggestServiceId": "bkg_suggest",
+        "geosearchServiceId": "bkg_geosearch",
+        "extent": [350000, 5780000, 440000, 5850000],
+        "epsg": "EPSG:25833",
+        "filter": "filter=(typ:*)",
+        "score": 0.6
+      },
+      "komoot": {
+        "serviceId": "komoot",
+        "lat": 52.5,
+        "lon": 13.4,
+        "bbox": "12.5,52.05,14.05,52.75"
+      },
+      "visibleVector": {
+        "minChars": 3,
+        "layerTypes": ["WFS", "GeoJSON", "SensorThings"]
+      },
+      "tree": {},
+      "startZoomLevel": 9,
+      "zoomLevel": 9,
+      "placeholder": "Suche"
+    },
+    "layerInformation": {
+      "showMetaDataRevision": false
+    },
+    "portalTitle": {
+      "logo": "../resources/img/dps_logo_90x40.png",
+      "link": "https://viz.berlin.de",
+      "toolTip": "Digitale Plattform Stadtverkehr"
+    },
+    "mapView": {
+      "backgroundImage": "../resources/img/backgroundCanvas.jpeg",
+      "startCenter": [390702.983, 5819768.573],
+      "options": [
+        {
+          "resolution": 611.4974492763076,
+          "scale": 2311167,
+          "zoomLevel": 0
+        },
+        {
+          "resolution": 305.7487246381551,
+          "scale": 1155583,
+          "zoomLevel": 1
+        },
+        {
+          "resolution": 152.87436231907702,
+          "scale": 577791,
+          "zoomLevel": 2
+        },
+        {
+          "resolution": 76.43718115953851,
+          "scale": 288896,
+          "zoomLevel": 3
+        },
+        {
+          "resolution": 38.21859057976939,
+          "scale": 144448,
+          "zoomLevel": 4
+        },
+        {
+          "resolution": 19.109295289884642,
+          "scale": 72223,
+          "zoomLevel": 5
+        },
+        {
+          "resolution": 9.554647644942321,
+          "scale": 36112,
+          "zoomLevel": 6
+        },
+        {
+          "resolution": 4.7773238224711605,
+          "scale": 18056,
+          "zoomLevel": 7
+        },
+        {
+          "resolution": 2.3886619112355802,
+          "scale": 9028,
+          "zoomLevel": 8
+        },
+        {
+          "resolution": 1.1943309556178034,
+          "scale": 4514,
+          "zoomLevel": 9
+        },
+        {
+          "resolution": 0.5971654778089017,
+          "scale": 2257,
+          "zoomLevel": 10
+        },
+        {
+          "resolution": 0.298582739,
+          "scale": 1128,
+          "zoomLevel": 11
+        },
+        {
+          "resolution": 0.149291369,
+          "scale": 564,
+          "zoomLevel": 12
+        },
+        {
+          "resolution": 0.074645685,
+          "scale": 282,
+          "zoomLevel": 13
+        },
+        {
+          "resolution": 0.037322842,
+          "scale": 141,
+          "zoomLevel": 14
+        }
+      ],
+      "extent": [330000, 5770000, 440000, 5850000],
+      "startZoomLevel": 3,
+      "epsg": "EPSG:25833"
+    },
+    "menu": {
+      "eInfoOverview": {
+        "name": "Übersicht",
+        "icon": "bi-list",
+        "serviceURL": "https://api.viz.berlin.de/e-infoplattform/chargecloud/lade-standort/geojsondps"
+      },
+      "tree": {
+        "name": "translate#common:menu.topics"
+      },
+      "tools": {
+        "name": "translate#common:menu.tools.name",
+        "children": {
+          "gfi": {
+            "name": "Informationen abfragen",
+            "active": true,
+            "roles": ["ds_open_data"]
+          },
+          "coordToolkit": {
+            "name": "Koordinatensuche",
+            "roles": ["ds_open_data"]
+          },
+          "measure": {
+            "name": "Strecke / Fläche messen",
+            "roles": ["ds_open_data"]
+          },
+          "draw": {
+            "name": "Zeichnen / Schreiben",
+            "glyphicon": "glyphicon-pencil",
+            "roles": ["ds_open_data"]
+          },
+          "fileImport": {
+            "enableZoomToExtend": true,
+            "roles": ["ds_open_data"]
+          },
+          "addWMS": {"roles": ["ds_open_data"]},
+          "saveSelection": {
+            "name": "Auswahl speichern",
+            "roles": ["ds_open_data"]
+          },
+          "routing": {
+            "name": "translate#common:menu.tools.routing",
+            "icon": "bi-signpost-2-fill",
+            "roles": ["ds_open_data"],
+            "activeRoutingToolOption": "DIRECTIONS",
+            "routingToolOptions": ["DIRECTIONS", "ISOCHRONES"],
+            "download": {
+              "filename": "",
+              "format": "GEOJSON"
+            },
+            "geosearch": {
+              "minChars": 3,
+              "limit": 10,
+              "type": "BKG",
+              "serviceId": "bkg_geosearch"
+            },
+            "geosearchReverse": {
+              "distance": 1000,
+              "filter": "typ:strasse",
+              "type": "BKG",
+              "serviceId": "bkg_reverse"
+            },
+            "directionsSettings": {
+              "type": "ORS",
+              "serviceId": "bkg_ors",
+              "speedProfile": "CAR",
+              "preference": "RECOMMENDED",
+              "styleRoute": {
+                "fillColor": [255, 44, 0],
+                "width": 6,
+                "highlightColor": [255, 255, 255],
+                "highlightWidth": 9,
+                "partHighlightColor": [255, 255, 255],
+                "partHighlightWidth": 3
+              },
+              "styleWaypoint": {
+                "lineColor": [255, 127, 0],
+                "lineWidth": 4,
+                "fillColor": [255, 127, 0],
+                "textFillColor": "#000",
+                "textLineColor": "#fff",
+                "textLineWidth": 3,
+                "opacity": 0.3,
+                "radius": 8
+              },
+              "styleAvoidAreas": {
+                "lineColor": [0, 127, 255],
+                "lineWidth": 2,
+                "fillColor": [0, 127, 255],
+                "opacity": 0.3,
+                "pointRadius": 8,
+                "pointLineWidth": 4
+              },
+              "batchProcessing": {
+                "enabled": false,
+                "active": false,
+                "limit": 1000,
+                "maximumConcurrentRequests": 3
+              }
+            },
+            "isochronesSettings": {
+              "type": "ORS",
+              "serviceId": "bkg_ors",
+              "speedProfile": "CAR",
+              "isochronesMethodOption": "TIME",
+              "distanceValue": 30,
+              "minDistance": 1,
+              "maxDistance": 400,
+              "timeValue": 30,
+              "minTime": 1,
+              "maxTime": 180,
+              "intervalValue": 15,
+              "minInterval": 3,
+              "maxInterval": 30,
+              "styleCenter": {
+                "lineColor": [255, 127, 0],
+                "lineWidth": 4,
+                "fillColor": [255, 127, 0],
+                "opacity": 0.3,
+                "radius": 8
+              },
+              "styleIsochrones": {
+                "lineWidth": 2,
+                "opacity": 0.65,
+                "startColor": [66, 245, 78],
+                "endColor": [245, 66, 66]
+              },
+              "batchProcessing": {
+                "enabled": false,
+                "active": false,
+                "limit": 1000,
+                "maximumConcurrentRequests": 3
+              }
+            }
+          }
+        }
+      },
+      "legend": {}
+    },
+    "controls": {
+      "fullScreen": true,
+      "zoom": true,
+      "orientation": {
+        "zoomMode": "once"
+      },
+      "attributions": {
+        "isInitOpenDesktop": false,
+        "isInitOpenMobile": false
+      },
+      "mousePosition": true,
+      "toggleMenu": true
+    }
+  },
+  "Themenconfig": {
+    "Hintergrundkarten": {
+      "Layer": [
+        {
+          "id": "Alkis",
+          "name": "ALKIS",
+          "visibility": false
+        },
+        {
+          "id": "DOP20",
+          "name": "Luftbild 2023",
+          "visibility": false
+        },
+        {
+          "id": "OSM",
+          "name": "Open Street Map",
+          "visibility": false
+        },
+        {
+          "id": "topplusopen",
+          "name": "TopPlusOpen",
+          "visibility": false
+        },
+        {
+          "id": "WebatlasBrandenburg",
+          "name": "Webatlas",
+          "visibility": false,
+          "transparency": 30
+        },
+        {
+          "id": "basemap_raster_farbe",
+          "visibility": false
+        },
+        {
+          "id": "basemap_raster_grau",
+          "visibility": true
+        },
+        {
+          "id": "bezirke",
+          "name": "Bezirke",
+          "visibility": false,
+          "transparency": 30
+        }
+      ]
+    },
+    "Fachdaten": {
+      "Layer": [
+        {
+          "id": "chargecloud",
+          "name": "Ladestationen",
+          "styleId": "chargecloud",
+          "clusterDistance": 25,
+          "visibility": true
+        }
+      ]
+    }
+  }
+}

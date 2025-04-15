@@ -2,8 +2,14 @@
   "globalAlerts": [
   ],
   "restrictedAlerts": {
+    "https://viz-relaunch.wemove.com/site/_masterportal/berlin_stauschwerpunkte":[
+      "Stauschwerpunkte"
+    ],
     "https://viz.berlin.de/site/_masterportal/berlin_stauschwerpunkte":[
       "Stauschwerpunkte"
+    ],
+    "https://viz-relaunch.wemove.com/site/_masterportal/parkraumkartierung":[
+      "Parkraumkartierung"
     ],
     "https://viz.berlin.de/site/_masterportal/parkraumkartierung":[
       "Parkraumkartierung"
@@ -20,7 +26,7 @@
     "Parkraumkartierung": {
       "displayClass": "info",
       "category": "Parkraumkartierung",
-      "content": "<p>Vorliegender Datensatz wurde im eUVM-Forschungsprojekts 2022/23 erstellt. Der Datensatz umfasst alle Parkflächen im öffentlichen Straßenraum innerhalb des Berliner S-Bahnringes sowie ausgewählte, angrenzende Gebiete.</p><p>Die genaue Methodik zur Erfassung des vorliegenden Datensatzes finden Sie <a href=\"https://www.berlin.de/sen/uvk/mobilitaet-und-verkehr/verkehrspolitik/forschungs-und-entwicklungsprojekte/laufende-projekte/euvm-1076914.php\" target=\"_blank\">hier</a>. Die Genauigkeit der Daten beträgt entsprechend der ausgeschriebenen Anforderungen mindestens 95 % (Stand Juli 2023). Aufgrund der Anforderung und der Größe des Datensatzes können vereinzelte Fehler nicht ausgeschlossen werden. Es ergeben sich keine Rechtsforderungen aus den Daten. Rückfragen zu Nutzungsrechten und größere Fehlermeldungen können an diese <a href=\"mailto:benjamin.sternkopf@senmvku.berlin.de\">E-Mail-Adresse</a> gesendet werden.</p><p>Die Daten können nach Parkplatz-Typen gefiltert werden:</p><p>Wenn man den Datensatz links unter Themen bei Fachdaten im Datenbaum sieht, kann man auf das kleine Filtersymbol neben dem Namen klicken. Dann öffnet sich ein Fenster mit den gegebenen Filtermöglichkeiten.</p><p>Außerdem ist es möglich Layer aus anderen Datensätzen, bspw. Bezirksgrenzen, Grenzen der Umweltzone (= S-Bahnring), Inrix-Daten der öffentlichen Parkhäuser etc. einzublenden.</p>",
+      "content": "<p>Die genaue Methodik zur Erfassung des vorliegenden Datensatzes finden Sie <a href=\"https://www.berlin.de/sen/uvk/mobilitaet-und-verkehr/verkehrspolitik/forschungs-und-entwicklungsprojekte/laufende-projekte/euvm-1076914.php\" target=\"_blank\">hier</a>. Die Genauigkeit der Daten beträgt entsprechend der ausgeschriebenen Anforderungen mindestens 95 % (Stand Juli 2023). Trotz hoher Sorgfalt bei der Erfassung können die Daten Fehler enthalten oder nicht in allen Fällen den aktuellen Gegebenheiten entsprechen. Insbesondere können Änderungen der Parkregelungen nach der Datenerhebung nicht berücksichtigt sein. Bitte beachten Sie, dass die Verkehrszeichen vor Ort maßgeblich sind. Aus den Daten lassen sich keine Rechtsansprüche ableiten.</p><p>Die Daten können nach Parkplatz-Typen gefiltert werden:<br>Klicken Sie hierfür bei dem Datensatz links unter Themen auf das kleine Filtersymbol neben dem Namen des Datensatzes. Es öffnet sich ein Fenster mit den gegebenen Filtermöglichkeiten. Außerdem ist es möglich Layer aus anderen Datensätzen, bspw. Bezirksgrenzen, Grenzen der Umweltzone (= S-Bahnring), Inrix-Daten der öffentlichen Parkhäuser etc. einzublenden.</p><p>Zusätzlich wird nun die Kartierung aller Parkflächen im öffentlichen Straßenraum auch für das restliche Stadtgebiet außerhalb des S-Bahnringes dargestellt.</p><p>Die genaue Methodik zur Erfassung des vorliegenden Datensatzes finden Sie <a href=\"https://www.berlin.de/sen/uvk/mobilitaet-und-verkehr/verkehrspolitik/forschungs-und-entwicklungsprojekte/laufende-projekte/euvm-1076914.php\" target=\"_blank\">hier</a>. Die Genauigkeit der Daten beträgt entsprechend der ausgeschriebenen Anforderungen mindestens 80 % (Stand 2021), da die Erfassung hauptsächlich auf Grundlage der Daten der Straßenbefahrung 2021 stattfand. Aufgrund der Größe und Aktualität des Datensatzes können Unstimmigkeiten oder Fehler auftreten. Auch hier gilt: Bitte beachten Sie, dass die Verkehrszeichen vor Ort maßgeblich sind. Die tatsächlichen Parkregelungen können von den Daten abweichen. Es ergeben sich keine Rechtsforderungen aus den Daten. Rückfragen zu Nutzungsrechten und <u>größere</u> Fehlermeldungen können an <a href=\"mailto:testfeldstadtverkehr@SenMVKU.berlin.de\">testfeldstadtverkehr@SenMVKU.berlin.de</a> gesendet werden.</p>",
       "mustBeConfirmed": false,
       "once": false
     }

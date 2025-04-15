@@ -20,14 +20,8 @@
   {
     "id": "bkg_ors",
     "name": "BKG Routing Service",
-    "url" : "https://sg.geodatenzentrum.de/web_ors",
+    "url" : "https://sgx.geodatenzentrum.de/web_ors",
     "typ" : "RoutingService"
-  },
-  {
-    "id" : "nominatim",
-    "name" : "OSM Suche",
-    "url" : "https://nominatim.openstreetmap.org/search?",
-    "typ" : "WFS"
   },
   {
     "id" : "komoot",
@@ -44,7 +38,7 @@
   {
     "id": "mapfish_printservice_id",
     "name": "Mapfish Print Service",
-    "url" : "https://gdi.berlin.de/services/printing/",
+    "url" : "https://api.viz.berlin.de/print/",
     "typ" : "PrintService"
   }
 ]

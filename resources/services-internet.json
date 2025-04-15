@@ -8,56 +8,35 @@
     "optionsFromCapabilities": true
   },
   {
-    "id": "OSM topplus",
-    "name": "Open Street Map Hintergrundkarte",
+    "id": "topplusopen",
+    "name": "TopPlusOpen Hintergrundkarte",
     "capabilitiesUrl": "https://sgx.geodatenzentrum.de/wmts_topplus_open/1.0.0/WMTSCapabilities.xml",
     "typ": "WMTS",
     "layers": "web",
     "optionsFromCapabilities": true
   },
   {
-    "id": "OSM-terrestris",
-    "name": "Open Street Map Hintergrundkarte",
-    "url": "https://ows.terrestris.de/osm/service?",
-    "typ": "WMS",
-    "layers": "OSM-WMS",
-    "format": "image/png",
-    "version": "1.1.1",
-    "singleTile": false,
-    "transparent": true,
-    "transparency": 0,
-    "tilesize": "512",
-    "gutter": "0",
-    "minScale": "0",
-    "maxScale": "2500000",
-    "gfiAttributes": "ignore",
-    "gfiTheme": "default",
-    "layerAttribution": "nicht vorhanden",
-    "legendURL": "ignore",
-    "cache": true,
-    "featureCount": "1"
-  },
-  {
     "id": "oepnvvorrang",
     "name": "ÖPNV-Vorrangnetz",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_vorrangnetz",
+    "url": "https://gdi.berlin.de/services/wms/vorrangnetz",
     "typ": "WMS",
-    "layers": "2,1",
+    "layers": "b_oepnv_nachtangebot,a_oepnv_vorrangnetz",
     "format": "image/png",
-    "version": "1.1.1",
+    "version": "1.3.0",
     "singleTile": false,
     "transparent": true,
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "5000",
-    "maxScale": "210000",
-    "gfiAttributes": "ignore",
+    "gfiAttributes": {
+      "vorrangtyp": "Vorrangtyp",
+      "linien": "Linien"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
-    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_vorrangnetz_gesamt.png",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/vorrangnetz?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=500&height=267&layer=a_oepnv_vorrangnetz", "https://gdi.berlin.de/services/wms/vorrangnetz?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=500&height=51&layer=b_oepnv_nachtangebot"],
     "cache": true,
-    "featureCount": "1",
+    "featureCount": "10",
     "datasets": [
       {
         "md_id": "oepnv-vorrangnetz",
@@ -65,28 +44,6 @@
         "csw_url": "https://api.viz.berlin.de/csw"
       }
     ]
-  },
-  {
-    "id": "AlkisSW",
-    "name": "ALKIS s/w",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/wmsk_alkis_sw",
-    "typ": "WMS",
-    "layers": "30,4,19,21,0,24,13,9,8,18,25,20,17,12,34,28,6,22,29,26,47,46,44,42",
-    "format": "image/png",
-    "version": "1.3.",
-    "singleTile": false,
-    "transparent": true,
-    "transparency": 0,
-    "tilesize": "512",
-    "gutter": "0",
-    "minScale": "0",
-    "maxScale": "2500000",
-    "gfiAttributes": "ignore",
-    "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
-    "legendURL": "ignore",
-    "cache": true,
-    "featureCount": "1"
   },
   {
     "id": "alkis_bg",
@@ -120,22 +77,25 @@
   {
     "id": "Strassennetz",
     "name": "translate#common:berlinLayers.step",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/verkehr_strnetz",
+    "url": "https://gdi.berlin.de/services/wms/strnetz",
     "typ": "WMS",
-    "layers": "1",
+    "layers": "uebergeordnetes_strnetz",
     "format": "image/png",
-    "version": "1.1.1",
+    "version": "1.3.0",
     "singleTile": false,
     "transparent": true,
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "500",
-    "maxScale": "50000",
-    "gfiAttributes": "ignore",
+    "gfiAttributes": {
+      "strassenname": "Straße",
+      "stadtteil": "Stadtteil",
+      "bezirk": "Bezirk",
+      "strassenklasse1": "StEP Stufe"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
-    "legend": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_verkehr_strnetz.png",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legend": "https://gdi.berlin.de/services/wms/strnetz?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=380&height=200&layer=uebergeordnetes_strnetz",
     "cache": true,
     "featureCount": "1",
     "datasets": [
@@ -151,7 +111,7 @@
     "name": "Bezirke",
     "url": "https://api.viz.berlin.de/geoserver/mdh/wms",
     "typ": "WMS",
-    "layers": "bezirke",
+    "layers": "bezirke_parken",
     "format": "image/png",
     "version": "1.1.1",
     "singleTile": true,
@@ -162,54 +122,17 @@
     "maxScale": "2500000",
     "gfiAttributes": "ignore",
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Datenquelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "legendURL": "ignore",
     "cache": true,
-    "featureCount": "1"
-  },
-  {
-    "id": "WebatlasGrau",
-    "name": "Webatlas Grau",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_webatlasberlin",
-    "typ": "WMS",
-    "layers": "1",
-    "format": "image/png",
-    "version": "1.1.1",
-    "singleTile": false,
-    "transparent": true,
-    "transparency": 0,
-    "tilesize": "512",
-    "gutter": "0",
-    "minScale": "0",
-    "maxScale": "2500000",
-    "gfiAttributes": "ignore",
-    "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
-    "legendURL": "ignore",
-    "cache": true,
-    "featureCount": "1"
-  },
-  {
-    "id": "Webatlas",
-    "name": "Webatlas",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_webatlasberlin",
-    "typ": "WMS",
-    "layers": "0",
-    "format": "image/png",
-    "version": "1.1.1",
-    "singleTile": false,
-    "transparent": true,
-    "transparency": 0,
-    "tilesize": "512",
-    "gutter": "0",
-    "minScale": "0",
-    "maxScale": "2500000",
-    "gfiAttributes": "ignore",
-    "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
-    "legendURL": "ignore",
-    "cache": true,
-    "featureCount": "1"
+    "featureCount": "1",
+    "datasets": [
+      {
+        "md_id": "bezirke",
+        "md_name": "Bezirke",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
   },
   {
     "id": "WebatlasBrandenburgGrau",
@@ -396,14 +319,6 @@
     ]
   },
   {
-    "id": "DLR",
-    "name": "EOC Basemap",
-    "capabilitiesUrl": "https://tiles.geoservice.dlr.de/service/wmts?SERVICE=WMTS&REQUEST=GetCapabilities",
-    "typ": "WMTS",
-    "layers": "eoc:basemap",
-    "optionsFromCapabilities": true
-  },
-  {
     "id": "DWD_Wetterwarnungen",
     "name": "DWD Wetterwarnungen",
     "url": "https://maps.dwd.de/geoserver/dwd/wms?",
@@ -497,7 +412,7 @@
     "maxScale": "3000000",
     "gfiAttributes": "ignore",
     "gfiTheme": "default",
-    "layerAttribution": "Darstellung: Senatsverwaltung für Mobilität; Datengrundlage: VMZ Berlin Betreibergesellschaft mbH / HERE Europe B.V.",
+    "layerAttribution": "Darstellung: Senatsverwaltung für Verkehr Berlin; Datengrundlage: VMZ Berlin Betreibergesellschaft mbH / HERE Europe B.V.",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
@@ -528,7 +443,7 @@
     "maxScale": "3000000",
     "gfiAttributes": "ignore",
     "gfiTheme": "default",
-    "layerAttribution": "Darstellung: Senatsverwaltung für Mobilität; Datengrundlage: VMZ Berlin Betreibergesellschaft mbH / HERE Europe B.V.",
+    "layerAttribution": "Darstellung: Senatsverwaltung für Verkehr Berlin; Datengrundlage: VMZ Berlin Betreibergesellschaft mbH / HERE Europe B.V.",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
@@ -559,7 +474,7 @@
     "maxScale": "3000000",
     "gfiAttributes": "ignore",
     "gfiTheme": "default",
-    "layerAttribution": "Darstellung: Senatsverwaltung für Mobilität; Datengrundlage: VMZ Berlin Betreibergesellschaft mbH / HERE Europe B.V.",
+    "layerAttribution": "Darstellung: Senatsverwaltung für Verkehr Berlin; Datengrundlage: VMZ Berlin Betreibergesellschaft mbH / HERE Europe B.V.",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
@@ -595,7 +510,7 @@
       "diebst_einw": "Diebstähle pro 100 Einwohner"
     },
     "gfiTheme": "default",
-    "layerAttribution": "Darstellung: Senatsverwaltung für Mobilität; Datengrundlage:&nbsp;<a href=\"https://www.kriminalitaetsatlas.berlin.de/K-Atlas/atlas.html\" target=\"_blank\">Polizei Berlin</a>",
+    "layerAttribution": "Darstellung: Senatsverwaltung für Verkehr Berlin; Datengrundlage:&nbsp;<a href=\"https://www.kriminalitaetsatlas.berlin.de/K-Atlas/atlas.html\" target=\"_blank\">Polizei Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
@@ -612,9 +527,9 @@
   {
     "id": "parkverbotszonen",
     "name": "Parkverbotszonen Mikromobilität",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_parkverbotmikromob",
+    "url": "https://gdi.berlin.de/services/wms/parkverbot_mikromob",
     "typ": "WMS",
-    "layers": "0",
+    "layers": "parkverbot_mikromobilitaet",
     "format": "image/png",
     "version": "1.3.0",
     "singleTile": true,
@@ -622,15 +537,18 @@
     "transparency": 40,
     "tilesize": "256",
     "gutter": "0",
-    "minScale": "500",
-    "maxScale": "210000",
-    "gfiAttributes": "ignore",
+    "gfiAttributes": {
+      "gisid": "Technischer Schlüssel",
+      "fid_bezirk": "Bezirksnummer",
+      "namgem": "Bezirksname",
+      "typ": "Typ"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/\" target=\"_blank\">Geoportal Land Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
-    "legend": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_mikromob.png",
+    "legend": "https://gdi.berlin.de/services/wms/parkverbot_mikromob?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=500&height=70&layer=parkverbot_mikromobilitaet",
     "datasets": [
       {
         "md_id": "parkverbot_mikromob",
@@ -638,126 +556,6 @@
         "csw_url": "https://api.viz.berlin.de/csw"
       }
     ]
-  },
-  {
-    "id": "umweltverkehrslage-pm10",
-    "name": "Luftqualität - Feinstaub(Partikel)",
-    "url": "https://senuvk.dev.vmz.services/immis-wms/v2/tile?",
-    "typ": "WMS",
-    "layers": "pm10",
-    "format": "image/png",
-    "version": "1.1.1",
-    "singleTile": true,
-    "transparent": true,
-    "transparency": 40,
-    "tilesize": "256",
-    "gutter": "0",
-    "minScale": "0",
-    "maxScale": "75000",
-    "gfiAttributes": "ignore",
-    "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://viz.berlin.de/luftqualitaet-clean/\" target=\"_blank\">Senatsverwaltung für Mobilität</a>",
-    "cache": true,
-    "featureCount": "1",
-    "epsg": "EPSG:25833",
-    "legend": "https://api.viz.berlin.de/geoserver/www/legende_pm10.png",
-    "datasets": [
-      {
-        "md_id": "luftqualitaet",
-        "md_name": "Luftqualität",
-        "csw_url": "https://api.viz.berlin.de/csw"
-      }
-    ]
-  },
-  {
-    "id": "umweltverkehrslage-no2",
-    "name": "Luftqualität - Stickstoffdioxid (NO2)",
-    "url": "https://senuvk.dev.vmz.services/immis-wms/v2/tile?",
-    "typ": "WMS",
-    "layers": "no2",
-    "format": "image/png",
-    "version": "1.1.1",
-    "singleTile": true,
-    "transparent": true,
-    "transparency": 40,
-    "tilesize": "256",
-    "gutter": "0",
-    "minScale": "0",
-    "maxScale": "75000",
-    "gfiAttributes": "ignore",
-    "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://viz.berlin.de/luftqualitaet-clean/\" target=\"_blank\">Senatsverwaltung für Mobilität</a>",
-    "cache": true,
-    "featureCount": "1",
-    "epsg": "EPSG:25833",
-    "legend": "https://api.viz.berlin.de/geoserver/www/legende_no2.png",
-    "datasets": [
-      {
-        "md_id": "luftqualitaet",
-        "md_name": "Luftqualität",
-        "csw_url": "https://api.viz.berlin.de/csw"
-      }
-    ]
-  },
-  {
-    "id": "Verkehrslage lokal test",
-    "name": "Verkehrslage lokal test",
-    "url": "http://192.168.2.178:8080/geoserver/mdh/wms?",
-    "typ": "WMS",
-    "layers": "inrixosm-test",
-    "format": "image/png",
-    "version": "1.1.1",
-    "singleTile": true,
-    "transparent": true,
-    "transparency": 0,
-    "tilesize": "512",
-    "gutter": "0",
-    "minScale": "0",
-    "maxScale": "2500000",
-    "gfiAttributes": "ignore",
-    "gfiTheme": "default",
-    "layerAttribution": "nicht vorhanden",
-    "cache": true,
-    "featureCount": "1",
-    "epsg": "EPSG:25833",
-    "legend": "http://localhost:8080/geoserver/www/legende_los.png"
-  },
-  {
-    "id": "Verkehrslage lokal highcontrast test",
-    "name": "Verkehrslage highcontrast lokal",
-    "url": "http://192.168.2.178:8080/geoserver/mdh/wms?",
-    "typ": "WMS",
-    "layers": "inrixosm-highcontrast-test",
-    "format": "image/png",
-    "version": "1.1.1",
-    "singleTile": true,
-    "transparent": true,
-    "transparency": 0,
-    "tilesize": "512",
-    "gutter": "0",
-    "minScale": "0",
-    "maxScale": "2500000",
-    "gfiAttributes": "ignore",
-    "gfiTheme": "default",
-    "layerAttribution": "nicht vorhanden",
-    "cache": true,
-    "featureCount": "1",
-    "epsg": "EPSG:25833",
-    "legend": "http://localhost:8080/geoserver/www/legende_los.png"
-  },
-  {
-    "id": "Messquerschnitte",
-    "name": "Messquerschnitte",
-    "url": "localdata/Detektoren_Brandenburg.json",
-    "typ": "GeoJSON",
-    "gfiAttributes": {
-      "laneId": "laneId",
-      "direction": "direction",
-      "directionDesc": "directionDesc"
-    },
-    "layerAttribution": "nicht vorhanden",
-    "legendURL": "",
-    "gfiTheme": "default"
   },
   {
     "id": "Bahnhof",
@@ -815,48 +613,173 @@
     ]
   },
   {
-    "id": "Sharenow",
-    "name": "Sharenow",
-    "url": "localdata/sharenow.geojson",
-    "typ": "GeoJSON",
-    "searchField": [
-      "address"
-    ],
-    "gfiAttributes": {
-      "address": "Adresse",
-      "buildSeries": "buildSeries",
-      "fuelType": "fuelType",
-      "fuelLevel": "fuelLevel",
-      "plate": "plate"
-    },
-    "layerAttribution": "Datenquelle:&nbsp;<a href=\"https://www.share-now.com/de/de/\" target=\"_blank\">Share Now</a>",
-    "legendURL": "",
-    "urlIsVisible": false,
-    "gfiTheme": "default"
-  },
-  {
     "id": "jelbi",
     "name": "Jelbi-Stationen",
-    "url": "https://api.viz.berlin.de/geoserver/www/jelbi.json",
-    "typ": "GeoJSON",
-    "searchField": [
-      "Adresse",
-      "Name"
-    ],
-    "gfiAttributes": {
-      "Typ": "Typ",
-      "Adresse": "Adresse",
-      "Name": "Name",
-      "Services (DE)": "Services",
-      "Kapazität (DE)": "Kapazität"
-    },
+    "url": "https://api.viz.berlin.de/geoserver/mdh/ows?",
+    "typ": "WMS",
+    "layers": "jelbi",
+    "format": "image/png",
+    "version": "1.1.1",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "minScale": "0",
+    "maxScale": "3000000",
     "layerAttribution": "Datenquelle:&nbsp;<a href=\"https://www.jelbi.de/\" target=\"_blank\">Jelbi</a>",
-    "legendURL": "",
-    "gfiTheme": "default",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=jelbi&LEGEND_OPTIONS=forceLabels:on",
+    "infoFormat": "text/xml",
+    "gfiAttributes": {
+      "short_name": "Kurzbezeichnung",
+      "station_name": "Name",
+      "address": "Adresse",
+      "district": "Bezirk",
+      "description": "Beschreibung",
+      "station_state": "Status",
+      "station_state_comment": "Kommentar",
+      "wifi": "Wifi",
+      "smart_bench": "Smart Bench",
+      "car_charging_station": "E-Ladestation",
+      "capacity_bike": "Kapazität Fahrräder",
+      "capacity_car": "Kapazität Autos",
+      "capacity_kick_scooter": "Kapazität E-Scooter",
+      "capacity_motor_scooter": "Kapazität E-Mopeds",
+      "capacity_station_based_car": "Kapazität stationsbasierte Autos",
+      "availability_bike": "Verfügbare Fahrräder",
+      "availability_car": "Verfügbare Autos",
+      "availability_kick_scooter": "Verfügbare E-Scooter",
+      "availability_motor_scooter": "Verfügbare E-Mopeds",
+      "availability_station_based_car": "Verfügbare stationsbasierte Autos"
+    },
+    "featureCount": "20",
     "datasets": [
       {
         "md_id": "jelbi",
         "md_name": "Jelbi-Stationen",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "parken_be_ohne_pr",
+    "name": "Parkhäuser und Parkplätze Berlin (ohne P+R)",
+    "url": "https://api.viz.berlin.de/geoserver/mdh/ows?",
+    "typ": "WMS",
+    "layers": "parken_be_ohne_pr",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Datenquelle: INRIX (Stand 2021)",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=parken_be_ohne_pr",
+    "infoFormat": "text/xml",
+    "gfiAttributes": {
+      "name": "Name",
+      "addresse": "Adresse",
+      "typ": "Typ",
+      "kategorie": "Kategorie",
+      "stellplaetze": "Stellplätze",
+      "behindertenstellplaetze": "Behindertenstellplätze",
+      "gebuehren": "Gebühren",
+      "frauenparkplatz": "Frauenparkplatz",
+      "elektroladepunkt": "Elektroladepunkt"
+    },
+    "featureCount": "20",
+    "datasets": [
+      {
+        "md_id": "parken_be_ohne_pr",
+        "md_name": "Parkhäuser und Parkplätze Berlin (ohne P+R)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "parken_bb",
+    "name": "Parkplätze Brandenburg (mit P+R)",
+    "url": "https://api.viz.berlin.de/geoserver/mdh/ows?",
+    "typ": "WMS",
+    "layers": "parken_bb",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Datenquelle: INRIX (Stand 2021)",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=parken_bb",
+    "infoFormat": "text/xml",
+    "gfiAttributes": {
+      "name": "Name",
+      "addresse": "Adresse",
+      "typ": "Typ",
+      "kategorie": "Kategorie",
+      "stellplaetze": "Stellplätze",
+      "behindertenstellplaetze": "Behindertenstellplätze",
+      "gebuehren": "Gebühren",
+      "frauenparkplatz": "Frauenparkplatz",
+      "elektroladepunkt": "Elektroladepunkt"
+    },
+    "featureCount": "20",
+    "datasets": [
+      {
+        "md_id": "parken_bb",
+        "md_name": "Parkplätze Brandenburg (mit P+R)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "park_ride",
+    "name": "P+R-Anlagen Berlin",
+    "url": "https://gdi.berlin.de/services/wms/park_and_ride",
+    "typ": "WMS",
+    "layers": "park_and_ride",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "anlagennam": "Name",
+      "bahnhofsna": "Bahnhof",
+      "bezirk": "Bezirk",
+      "anzahl_anl": "Anzahl der P+R-Anlagen am Bhf.",
+      "tarifgebie": "Tarifzone",
+      "r_s_u_lini": "Verkehrende Regional-/S-/U-Bahn-Linien",
+      "stellplaet": "Anzahl Stellplätze P+R",
+      "steplaetze": "Anzahl Stellplätze für Behinderte",
+      "stellpla_1": "Anzahl Stellplätze Kurzzeitparken",
+      "stellpla_2": "Anzahl Stellplätze für motorisierte 2-Räder",
+      "auslastung": "Durchschnittliche Auslastung zur Hauptverkehrszeit",
+      "art": "Parkplatzart",
+      "belag": "Bodenbelag",
+      "einschraen": "Zeitliche Begrenzung",
+      "bewirtscha": "Bewirtschaftung",
+      "art_bewirt": "Art der Bewirtschaftung",
+      "anzahl_b_u": "Anzahl B+R-Stellplätze am Bhf."
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legend": "https://gdi.berlin.de/services/wms/park_and_ride?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=276&height=72&layer=park_and_ride",
+    "cache": true,
+    "featureCount": "20",
+    "datasets": [
+      {
+        "md_id": "park_ride",
+        "md_name": "P+R-Anlagen Berlin",
         "csw_url": "https://api.viz.berlin.de/csw"
       }
     ]
@@ -914,7 +837,7 @@
       "Art der Ladeeinrichtung": "Art der Ladeeinrichtung",
       "Anzahl Ladepunkte": "Anzahl Ladepunkte"
     },
-    "layerAttribution": "Darstellung: Senatsverwaltung für Mobilität; Datengrundlage: INRIX",
+    "layerAttribution": "Darstellung: Senatsverwaltung für Verkehr Berlin; Datengrundlage: INRIX",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -926,16 +849,6 @@
     ]
   },
   {
-    "id": "Differenz",
-    "name": "Differenznetz Inrix",
-    "url": "localdata/differenztest.json",
-    "typ": "GeoJSON",
-    "gfiAttributes": {},
-    "layerAttribution": "nicht vorhanden",
-    "legendURL": "",
-    "gfiTheme": "default"
-  },
-  {
     "id": "Infotafeln",
     "name": "translate#common:berlinLayers.infotafeln",
     "url": "https://api.viz.berlin.de/geoserver/www/infotafeln.json",
@@ -944,7 +857,7 @@
       "Betriebsbe": "Betriebsbereit seit",
       "Typ": "Typ"
     },
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -963,7 +876,7 @@
     "gfiAttributes": {
       "Richtung": "Richtung"
     },
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -1036,7 +949,7 @@
       }
     },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "datasets": [
       {
         "md_id": "wasserstrassen_land",
@@ -1048,9 +961,9 @@
   {
     "id": "Aufgrabeverbote",
     "name": "translate#common:berlinLayers.aufgrabeverbote",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/wmsk_aufgrabeverbote",
+    "url": "https://gdi.berlin.de/services/wms/aufgrabeverbote",
     "typ": "WMS",
-    "layers": "1",
+    "layers": "aufgrabeverbote",
     "format": "image/png",
     "version": "1.1.1",
     "singleTile": true,
@@ -1058,15 +971,34 @@
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "100",
-    "maxScale": "210000",
-    "gfiAttributes": "ignore",
+    "gfiAttributes": {
+      "objectid": "Schlüssel",
+      "bezirk": "Bezirk",
+      "ortsteil": "Ortsteil",
+      "strasse": "Straßenname",
+      "von": "Von (Straße oder Hausnummer) ",
+      "bis": "Bis (Straße oder Hausnummer) ",
+      "laenge": {
+        "name": "Ungefähre Länge",
+        "suffix": "Meter"
+      },
+      "breite": {
+        "name": "Ungefähre Breite",
+        "suffix": "Meter"
+      },
+      "lage": "Präzisierung der Lage",
+      "fb": "Betrifft Fahrbahn",
+      "gw": "Betrifft Gehweg",
+      "rw": "Betrifft Radweg",
+      "dat_fb": "Aufgrabeverbot Fahrbahn endet am",
+      "dat_gw_rw": "Aufgrabeverbot Geh-/Radweg endet am"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/\" target=\"_blank\">Geoportal Land Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
-    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_aufgrabeverbote.png",
+    "legendURL": "https://gdi.berlin.de/services/wms/aufgrabeverbote?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=203&height=153&layer=aufgrabeverbote",
     "datasets": [
       {
         "md_id": "aufgrabeverbote",
@@ -1078,25 +1010,54 @@
   {
     "id": "Detailnetz",
     "name": "Detailnetz Berlin",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_vms_detailnetz_wms_spatial",
+    "url": "https://gdi.berlin.de/services/wms/detailnetz",
     "typ": "WMS",
-    "layers": "0,1,2",
+    "layers": "a_verbindungspunkte,b_bauwerke,c_strassenabschnitte",
     "format": "image/png",
-    "version": "1.1.1",
+    "version": "1.3.0",
     "singleTile": true,
     "transparent": true,
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "1000",
-    "maxScale": "20000",
-    "gfiAttributes": "ignore",
+    "gfiAttributes": {
+      "dnkn__sdatenid": "Detailnetz-ID",
+      "verkehrsebene": "Verkehrsebene",
+      "dnbr__sdatenid": "Detailnetz-ID",
+      "bauwerksart": "Bauwerksart",
+      "bauwerksname": "Bauwerksname",
+      "bauwerksnummer": "Bauwerksnummer",
+      "sib_bauwerksnummer": "ASB-Nummer",
+      "dnez__sdatenid": "Detailnetz-ID",
+      "element_nr": "Detailnetz-Nr",
+      "strassenschluessel": "Straßennummer",
+      "strassenname": "Straßenname",
+      "str_bez": "Straßenbezeichnung",
+      "strassenklasse1": "StEP Klasse",
+      "strassenklasse": "OKSTRA-Klasse",
+      "strassenklasse2": "RBS-Klasse",
+      "verkehrsrichtung": "Verkehrsrichtung",
+      "bezirk": "Bezirk",
+      "stadtteil": "Ortsteil",
+      "verkehrsebene": "Verkehrsebene",
+      "beginnt_bei_vp": "von VP",
+      "endet_bei_vp": "bis VP",
+      "laenge": {
+        "name": "Länge",
+        "suffix": "m"
+      },
+      "gueltig_von": {
+        "name": "gültig von",
+        "type": "date",
+        "format": "DD.MM.YYYY"
+      }
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
-    "featureCount": "1",
+    "featureCount": "10",
     "epsg": "EPSG:25833",
-    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_detailnetz.png",
+    "legendURL": ["https://gdi.berlin.de/services/wms/detailnetz?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=517&height=48&layer=a_verbindungspunkte", "https://gdi.berlin.de/services/wms/detailnetz?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=517&height=199&layer=b_bauwerke", "https://gdi.berlin.de/services/wms/detailnetz?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=517&height=240&layer=c_strassenabschnitte"],
     "datasets": [
       {
         "md_id": "detailnetz",
@@ -1108,25 +1069,26 @@
   {
     "id": "lichtsignalanlagen",
     "name": "Lichtsignalanlagen",
-    "url": "https://fbinter.stadt-berlin.de/fb/wfs/data/senstadt/s_lsa",
-    "typ": "WFS",
-    "featureType": "fis:s_lsa",
-    "styleGeometryType": "Point",
-    "outputFormat": "XML",
-    "version": "2.0.0",
-    "searchField": [
-      "name",
-      "kname"
-    ],
+    "url": "https://gdi.berlin.de/services/wms/lsa",
+    "typ": "WMS",
+    "layers": "lsa",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
     "gfiAttributes": {
-      "standort": "Standort",
-      "lsa_id": "LSA-Nummer"
+      "lsa_id": "LSA-Nummer",
+      "standort": "Standort"
     },
     "gfiTheme": "default",
-    "gfiComplex": "false",
-    "minScale": 0,
-    "maxScale": 75000,
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "cache": true,
+    "featureCount": "10",
+    "epsg": "EPSG:25833",
+    "legendURL": "https://gdi.berlin.de/services/wms/lsa?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=311&height=62&layer=lsa",
     "hitTolerance": 0,
     "datasets": [
       {
@@ -1137,13 +1099,13 @@
     ]
   },
   {
-    "id": "Strassenbefahrung2014",
-    "name": "translate#common:berlinLayers.strassenbefahrung2014",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_StraDa",
+    "id": "strassenbefahrung",
+    "name": "translate#common:berlinLayers.strassenbefahrung",
+    "url": "https://gdi.berlin.de/services/wms/strassenbefahrung",
     "typ": "WMS",
-    "layers": "68,66,67,65,64,63,62,61,60,59,58,57,56,55,54,53,52,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1",
+    "layers": "aa_verkehrszeichen,ab_touchpoint,ac_trinkwasserbrunnen_wasserspender,ad_uhr,ae_viz_infotafel,af_wasserpumpen_brunnen,ag_werbesaeule,ah_abfallbehaelter_muellbox,ai_anforderungstaster_radverkehr,aj_anlegestelle,ak_briefkasten,al_durchfahrtshoehe,am_fahnenmast,an_fahrbahnmarkierung_piktogramm,ao_gebaeudeeingang,ap_handsteuergeraet_lsa,aq_hydrant,ar1_kabelkasten,ar_kanaldeckel,as_mast,at_mast_lsa,au_parkscheinautomat,av_poller,aw_spielgeraet,ax_strassensinkkasten,ay_streugutbehaelter,az_taxirufsaeule,ba_telefonzelle_telefonstele,bb_verkehrsschutzgitter,bc_aufmerksamkeitsstreifen,bd_bordstein,be_fahrbahnmarkierunglinie,bf_gelaender,bg_leitplanke,bh_mauer,bi_schranke,bj_sitzbank,bk_strassenbegrenzung,bl_strassenentwaesserungsrinne,bm_zugangsbauwerk,bn_baumscheibe,bo_denkmal,bp_fahrbahnmarkierung_flaeche,bq_fahrradstaender,br_fahrgastunterstand,bs_induktionsschleife,bt_kabelschacht,bu1_kleinbauten_sondernutzung,bu_recycling_container,bv_springbrunnen_zierbrunnen,bw_aufmerksamkeitsfeld,bx_fahrbahnschwelle,by_gehwegueberfahrt,bz_gleiskoerper_strab,ca_haltebereich_bus,cb_haltestellenwartebereich,cc_treppe,cd_rampe,ce_gruenflaeche,cf_trennstreifen,cg_baustelle,ch_radweg,ci_oeffentlicher_platz,cj_fussgaengerzone,ck_parkflaeche,cl_gehweg,cm_fahrbahn",
     "format": "image/png",
-    "version": "1.1.1",
+    "version": "1.3.0",
     "singleTile": true,
     "transparent": true,
     "transparency": 0,
@@ -1153,11 +1115,11 @@
     "maxScale": "210000",
     "gfiAttributes": "ignore",
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
-    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_Strassenbefahrung_2014.png",
+    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_Strassenbefahrung_2014_SLD.png",
     "datasets": [
       {
         "md_id": "strassenbefahrung2014",
@@ -1168,10 +1130,10 @@
   },
   {
     "id": "Tempolimits",
-    "name": "translate#common:berlinLayers.tempolimits",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_vms_tempolimits_spatial",
+    "name": "Tempolimits",
+    "url": "https://gdi.berlin.de/services/wms/tempolimits",
     "typ": "WMS",
-    "layers": "2,3",
+    "layers": "hoechstgeschwindigkeit,strassenabschnitte",
     "format": "image/png",
     "version": "1.1.1",
     "singleTile": true,
@@ -1179,19 +1141,30 @@
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "100",
-    "maxScale": "50000",
-    "gfiAttributes": "ignore",
+    "gfiAttributes": {
+      "strassenname": "Straßenname",
+      "stadtteil": "Stadtteil",
+      "bezirk": "Bezirk",
+      "wert_ves": {
+        "name": "Geschwindigkeit",
+        "suffix": "km/h"
+      },
+      "zeit_t": "Zeitliche Einschränkung",
+      "tag_t": "Wochentag",
+      "durch_t": "Grund",
+      "dann_t": "Gültigkeit",
+      "dat_t": "Vollzugsdatum"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
-    "featureCount": "1",
+    "featureCount": "10",
     "epsg": "EPSG:25833",
-    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_tempolimits.png",
+    "legend": ["https://gdi.berlin.de/services/wms/tempolimits?request=GetLegendGraphic&version=1.1.1&format=image%2Fpng&width=380&height=490&layer=hoechstgeschwindigkeit&service=WMS","https://gdi.berlin.de/services/wms/tempolimits?request=GetLegendGraphic&version=1.1.1&format=image%2Fpng&width=380&height=123&layer=strassenabschnitte&service=wms"],
     "datasets": [
       {
         "md_id": "tempolimits",
-        "md_name": "translate#common:berlinLayers.tempolimits",
+        "md_name": "tempolimits",
         "csw_url": "https://api.viz.berlin.de/csw"
       }
     ]
@@ -1199,25 +1172,23 @@
   {
     "id": "Umweltzone",
     "name": "Umweltzone",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_umweltzone2007",
+    "url": "https://gdi.berlin.de/services/wms/umweltzone",
     "typ": "WMS",
-    "layers": "0,3",
+    "layers": "umweltzone",
     "format": "image/png",
-    "version": "1.1.1",
+    "version": "1.3.0",
     "singleTile": true,
     "transparent": true,
     "transparency": 30,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "0",
-    "maxScale": "150000",
     "gfiAttributes": "ignore",
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
-    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_umweltzone2010.png",
+    "legendURL": "https://gdi.berlin.de/services/wms/umweltzone?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=500&height=70&layer=umweltzone",
     "datasets": [
       {
         "md_id": "umweltzone",
@@ -1229,24 +1200,50 @@
   {
     "id": "baumbestand",
     "name": "Baumbestand",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_wfs_baumbestand",
+    "url": "https://gdi.berlin.de/services/wms/baumbestand",
     "typ": "WMS",
-    "layers": "4,3,0,1",
+    "layers": "anlagenbaeume,strassenbaeume",
     "format": "image/png",
     "version": "1.3.0",
-    "singleTile": true,
+    "singleTile": false,
     "transparent": true,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "50",
-    "maxScale": "7000",
-    "gfiAttributes": "ignore",
+    "gfiAttributes": {
+      "standortnr": "Baum Nr.",
+      "kennzeich": "Objektnummer",
+      "namenr": "Objektname",
+      "art_dtsch": "Baumart (Deutsch)",
+      "art_bot": "Baumart (Botanisch)",
+      "gattung_deutsch": "Gattung (Deutsch)",
+      "gattung": "Gattung",
+      "art_gruppe": "Baumartgruppe",
+      "strname": "Straße",
+      "hausnr": "Hausnummer",
+      "zusatz": "Hausnummer Zusatz",
+      "pflanzjahr": "Pflanzjahr",
+      "standalter": "Standalter",
+      "kronedurch": {
+        "name": "Krone Durchmesser",
+        "suffix": "m"
+      },
+      "stammumfg": {
+        "name": "Stamm Umfang",
+        "suffix": "cm"
+      },
+      "baumhoehe": {
+        "name": "Baumhöhe",
+        "suffix": "m"
+      },
+      "eigentuemer": "Eigentümer",
+      "bezirk": "Bezirk"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
-    "featureCount": "1",
+    "featureCount": "10",
     "epsg": "EPSG:25833",
-    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_baumbestand.png",
+    "legendURL": ["https://gdi.berlin.de/services/wms/baumbestand?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=anlagenbaeume", "https://gdi.berlin.de/services/wms/baumbestand?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=strassenbaeume"],
     "datasets": [
       {
         "md_id": "baumbestand",
@@ -1258,27 +1255,30 @@
   {
     "id": "streetlights",
     "name": "Öffentliche Beleuchtung",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_oeffbeleucht",
+    "url": "https://gdi.berlin.de/services/wms/beleuchtung",
     "typ": "WMS",
-    "layers": "2,0,3",
+    "layers": "beleuchtung",
     "format": "image/png",
     "version": "1.3.0",
     "singleTile": true,
     "transparent": true,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "100",
-    "maxScale": "30000",
-    "gfiAttributes": "ignore",
+    "gfiAttributes": {
+      "leuchtstelle": "Leuchtstelle",
+      "kurznummer": "Kurznummer",
+      "betriebsart": "Betriebsart",
+      "status": "Status",
+      "bezirk": "Bezirk",
+      "ortsteil": "Ortsteil",
+      "strasse": "Straße"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
-    "featureCount": "1",
+    "featureCount": "10",
     "epsg": "EPSG:25833",
-    "legendURL": [
-      "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_beleuchtung_erhaltungsbereiche_gas.png",
-      "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_beleuchtung_leuchten.png"
-    ],
+    "legendURL": "https://gdi.berlin.de/services/wms/beleuchtung?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=380&height=847&layer=beleuchtung",
     "datasets": [
       {
         "md_id": "streetlights",
@@ -1304,11 +1304,11 @@
     "maxScale": "210000",
     "gfiAttributes": "ignore",
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
-    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_fussgaengernetz.png",
+    "legendURL": ["https://gdi.berlin.de/services/wms/fussgaengernetz?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=500&height=46&layer=a_verbindungspunkte", "https://gdi.berlin.de/services/wms/fussgaengernetz?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=500&height=46&layer=b_strassenelemente"],
     "datasets": [
       {
         "md_id": "fussgaengernetz",
@@ -1338,7 +1338,7 @@
       "section": "Abschnitt",
       "content": "Beschreibung"
     },
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -1361,7 +1361,7 @@
     ],
     "mqttOptions": false,
     "gfiAttributes": {},
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "legendURL": "",
     "urlParameter": {
       "select": "@iot.id,name,description,properties",
@@ -1536,7 +1536,7 @@
     ],
     "mqttOptions": false,
     "gfiAttributes": {},
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/weitere-radinfrastruktur/zaehlstellen-und-fahrradbarometer/\" target=\"_blank\">Senatsverwaltung für Mobilität</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/weitere-radinfrastruktur/zaehlstellen-und-fahrradbarometer/\" target=\"_blank\">Senatsverwaltung für Verkehr Berlin</a>",
     "legendURL": "",
     "urlParameter": {
       "select": "@iot.id,name,description,properties",
@@ -1709,114 +1709,20 @@
     ]
   },
   {
-    "id": "ereignisse",
-    "name": "Ereignisse Test",
-    "url": "https://fbinter.stadt-berlin.de/fb/wfs/data/senstadt/s_ereignisse",
-    "typ": "WFS",
-    "featureType": "s_ereignisse",
-    "outputFormat": "XML",
-    "version": "1.1.0",
-    "featureNS": "fis",
-    "gfiAttributes": {
-      "ereignis": "Ereignis",
-      "einschr": "Einschränkung",
-      "tat_beg": "Angefangen am",
-      "tat_end": "Fertiggestellt am",
-      "dat_beginn": "lt. Planung angefangen am",
-      "dat_ende": "lt. Planung beendet am",
-      "strasse": "Strasse",
-      "bezirk": "Bezirk",
-      "ortsteil": "Ortsteil",
-      "von_hausnr": "von Hausnr.",
-      "bis_hausnr": "bis Hausnr."
-    },
-    "gfiTheme": "default",
-    "gfiComplex": "false",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
-    "legend": "",
-    "hitTolerance": 0,
-    "datasets": false,
-    "urlIsVisible": true
-  },
-  {
-    "id": "MDM-Schleifen",
-    "name": "Verkehrsdetektion - Induktionsschleife Autobahn",
-    "url": "https://api.viz.berlin.de/FROST-Server-Stolpe",
-    "typ": "SensorThings",
-    "version": "1.1",
-    "searchField": [
-      "name"
-    ],
-    "mqttOptions": false,
-    "minScale": 0,
-    "maxScale": 2500000,
-    "gfiAttributes": {},
-    "layerAttribution": "Datenquelle:&nbsp;<a href=\"https://service.mdm-portal.de/mdm-portal-application/\" target=\"_blank\">Autobahn GmbH</a>",
-    "legendURL": "",
-    "urlParameter": {
-      "select": "@iot.id,name,description,properties",
-      "expand": "Locations($select=location)"
-    },
-    "showNoDataValue": true,
-    "gfiTheme": {
-      "name": "trafficCount",
-      "params": {
-        "headerProperties": [
-          "directionDesc",
-          "laneDesc"
-        ],
-        "meansOfTransports": [
-          {
-            "id": "Anzahl_Pkw",
-            "type": "counting",
-            "label": "PKW Anzahl",
-            "dayInterval": "1-Min"
-          },
-          {
-            "id": "Geschwindigkeit_Pkw",
-            "type": "speed",
-            "label": "PKW Geschwindigkeit",
-            "dayInterval": "1-Min"
-          },
-          {
-            "id": "Anzahl_Lkw",
-            "type": "counting",
-            "label": "LKW Anzahl",
-            "dayInterval": "1-Min"
-          },
-          {
-            "id": "Geschwindigkeit_Lkw",
-            "type": "speed",
-            "label": "LKW Geschwindigkeit",
-            "dayInterval": "1-Min"
-          }
-        ]
-      }
-    },
-    "epsg": "EPSG:4326",
-    "urlIsVisible": false,
-    "datasets": [
-      {
-        "md_id": "stolpe",
-        "md_name": "Verkehrsdetektion - Induktionsschleife Autobahn",
-        "csw_url": "https://api.viz.berlin.de/csw"
-      }
-    ]
-  },
-  {
     "id": "Parkraumbewirtschaftung",
     "name": "Parkraumbewirtschaftung",
-    "url": "https://fbinter.stadt-berlin.de/fb/wfs/data/senstadt/s_parkraumbewirt",
-    "typ": "WFS",
-    "featureType": "fis:s_parkraumbewirt",
-    "styleGeometryType": "Polygon",
-    "outputFormat": "XML",
-    "version": "2.0.0",
-    "searchField": [
-      "parkzone",
-      "bezirk"
-    ],
+    "url": "https://gdi.berlin.de/services/wms/parkraumbewirtschaftung",
+    "typ": "WMS",
+    "layers": "parkzonen",
+    "format": "image/png",
+    "version": "1.1.1",
+    "singleTile": false,
+    "transparent": true,
     "transparency": 20,
+    "tilesize": "512",
+    "gutter": "0",
+    "minScale": "0",
+    "maxScale": "2500000",
     "gfiAttributes": {
       "parkzone": "Parkzone",
       "bezirk": "Bezirk",
@@ -1825,8 +1731,11 @@
       "bemerkung": "Bemerkung"
     },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legend": "https://gdi.berlin.de/services/wms/parkraumbewirtschaftung?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=260&height=66&layer=parkzonen",
     "cache": true,
+    "featureCount": "1",
+    "epsg": "EPSG:25833",
     "datasets": [
       {
         "md_id": "parkraumbewirtschaftung",
@@ -1836,27 +1745,32 @@
     ]
   },
   {
-    "id": "Verkehrsmengen KFZ",
-    "name": "Verkehrsmengen KFZ",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_vmengen2019",
+    "id": "verkehrsmengen2019_kfz",
+    "name": "Verkehrsmengen KFZ 2019",
+    "url": "https://gdi.berlin.de/services/wms/verkehrsmengen_2019",
     "typ": "WMS",
-    "layers": "0",
+    "layers": "dtvw2019kfz",
     "format": "image/png",
-    "version": "1.1.1",
+    "version": "1.3.0",
     "singleTile": true,
     "transparent": true,
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "500",
-    "maxScale": "210000",
-    "gfiAttributes": "ignore",
+    "maxScale": "1000000",
+    "gfiAttributes": {
+      "elem_nr": "Detailnetz-Nr.",
+      "str_name": "Straßenname",
+      "stadtteil": "Ortsteil",
+      "bezirk": "Bezirk",
+      "dtvw_kfz": "DTVw-Kfz"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
-    "legend": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_vmengen19_0.png",
+    "legend": "https://gdi.berlin.de/services/wms/verkehrsmengen_2019?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=387&height=510&layer=dtvw2019kfz",
     "datasets": [
       {
         "md_id": "verkehrsmengen",
@@ -1866,27 +1780,32 @@
     ]
   },
   {
-    "id": "Verkehrsmengen LKW",
-    "name": "Verkehrsmengen LKW",
-    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_vmengen2019",
+    "id": "verkehrsmengen2019_lkw",
+    "name": "Verkehrsmengen LKW 2019",
+    "url": "https://gdi.berlin.de/services/wms/verkehrsmengen_2019",
     "typ": "WMS",
-    "layers": "1",
+    "layers": "dtvw2019lkw",
     "format": "image/png",
-    "version": "1.1.1",
+    "version": "1.3.0",
     "singleTile": true,
     "transparent": true,
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "500",
-    "maxScale": "210000",
-    "gfiAttributes": "ignore",
+    "maxScale": "1000000",
+    "gfiAttributes": {
+      "elem_nr": "Detailnetz-Nr.",
+      "str_name": "Straßenname",
+      "stadtteil": "Ortsteil",
+      "bezirk": "Bezirk",
+      "dtvw_lkw": "DTVw-Lkw"
+    },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
-    "legend": "https://fbinter.stadt-berlin.de/fb_daten/legenden/leg_vmengen19_1.png",
+    "legend": "https://gdi.berlin.de/services/wms/verkehrsmengen_2019?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=387&height=480&layer=dtvw2019lkw",
     "datasets": [
       {
         "md_id": "verkehrsmengen",
@@ -1896,24 +1815,155 @@
     ]
   },
   {
-    "id": "Verkehrsmengen DTV",
-    "name": "Verkehrsmengen DTV 2019",
-    "url": "https://fbinter.stadt-berlin.de/fb/wfs/data/senstadt/s_07_01verkmeng2019",
-    "typ": "WFS",
-    "featureType": "fis:s_07_01verkmeng2019",
-    "styleGeometryType": "LineString",
+    "id": "Verkehrsmengen KFZ",
+    "name": "DTVw 2023 KFZ (Verkehrsmengen DTVw 2023)",
+    "url": "https://gdi.berlin.de/services/wms/verkehrsmengen_2023",
+    "typ": "WMS",
+    "layers": "dtvw2023kfz",
     "format": "image/png",
-    "version": "1.1.0",
-    "searchField": [
-      "str_name"
-    ],
+    "version": "1.3.0",
     "singleTile": true,
     "transparent": true,
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "500",
-    "maxScale": "20000",
+    "maxScale": "1000000",
+    "gfiAttributes": {
+      "elem_nr": "Detailnetz-Nr.",
+      "str_name": "Straßenname",
+      "stadtteil": "Ortsteil",
+      "bezirk": "Bezirk",
+      "dtvw_kfz": "DTVw-Kfz"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "cache": true,
+    "featureCount": "1",
+    "epsg": "EPSG:25833",
+    "legend": "https://gdi.berlin.de/services/wms/verkehrsmengen_2023?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&layer=dtvw2023kfz",
+    "datasets": [
+      {
+        "md_id": "verkehrsmengen2023",
+        "md_name": "Verkehrsmengen DTVw 2023",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "Verkehrsmengen LKW",
+    "name": "DTVw 2023 Lkw (Verkehrsmengen DTVw 2023)",
+    "url": "https://gdi.berlin.de/services/wms/verkehrsmengen_2023",
+    "typ": "WMS",
+    "layers": "dtvw2023lkw",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "maxScale": "1000000",
+    "gfiAttributes": {
+      "elem_nr": "Detailnetz-Nr.",
+      "str_name": "Straßenname",
+      "stadtteil": "Ortsteil",
+      "bezirk": "Bezirk",
+      "dtvw_lkw": "DTVw-Lkw"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "cache": true,
+    "featureCount": "1",
+    "epsg": "EPSG:25833",
+    "legend": "https://gdi.berlin.de/services/wms/verkehrsmengen_2023?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&layer=dtvw2023lkw",
+    "datasets": [
+      {
+        "md_id": "verkehrsmengen2023",
+        "md_name": "Verkehrsmengen DTVw 2023",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "verkehrsmengen_2023_rad",
+    "name": "DTVw (12h) 2023 Rad (Verkehrsmengen DTVw 2023)",
+    "url": "https://gdi.berlin.de/services/wms/verkehrsmengen_2023",
+    "typ": "WMS",
+    "layers": "dtvw2023rad",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "maxScale": "1000000",
+    "gfiAttributes": {
+      "elem_nr": "Detailnetz-Nr.",
+      "str_name": "Straßenname",
+      "stadtteil": "Ortsteil",
+      "bezirk": "Bezirk",
+      "dtvw_rad": "DTVw (12h) Rad"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "cache": true,
+    "featureCount": "1",
+    "epsg": "EPSG:25833",
+    "legend": "https://gdi.berlin.de/services/wms/verkehrsmengen_2023?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=374&height=497&layer=dtvw2023rad",
+    "datasets": [
+      {
+        "md_id": "verkehrsmengen2023",
+        "md_name": "Verkehrsmengen DTVw 2023",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "verkehrsmengen_2023_baustellen",
+    "name": "längerfristige Baustellen (Verkehrsmengen DTVw 2023)",
+    "url": "https://gdi.berlin.de/services/wms/verkehrsmengen_2023",
+    "typ": "WMS",
+    "layers": "dtvw2023baustellen",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "maxScale": "1000000",
+    "gfiAttributes": {
+      "strasse": "Straßenname",
+      "ortsteil": "Ortsteil"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "cache": true,
+    "featureCount": "1",
+    "epsg": "EPSG:25833",
+    "legend": "https://gdi.berlin.de/services/wms/verkehrsmengen_2023?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=dtvw2023baustellen",
+    "datasets": [
+      {
+        "md_id": "verkehrsmengen2023",
+        "md_name": "Verkehrsmengen DTVw 2023",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "Verkehrsmengen DTV",
+    "name": "Verkehrsmengen DTV 2019",
+    "url": "https://gdi.berlin.de/services/wms/ua_verkehrsmengen_2019",
+    "typ": "WMS",
+    "layers": "verkehrsmengen_2019",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
     "gfiAttributes": {
       "str_name": "Name des Straßenabschnitts",
       "meter": {
@@ -1929,10 +1979,11 @@
       "krad": "DTV Motorräder"
     },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
+    "legend": "https://gdi.berlin.de/services/wms/ua_verkehrsmengen_2019?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=481&height=403&layer=verkehrsmengen_2019",
     "datasets": [
       {
         "md_id": "verkehrsmengen_dtv",
@@ -1970,7 +2021,7 @@
       "bemerkung": "Bemerkung"
     },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
@@ -2180,7 +2231,7 @@
       "@bilder.3.text": "Meldung 4",
       "@bilder.4.text": "Meldung 5"
     },
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -2226,7 +2277,7 @@
       "name": "Route",
       "flyer": "Flyer"
     },
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Mobilität</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Verkehr Berlin</a>",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -2246,7 +2297,7 @@
       "name": "Route",
       "flyer": "Flyer"
     },
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Mobilität</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Verkehr Berlin</a>",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -2266,7 +2317,7 @@
       "name": "Route",
       "flyer": "Flyer"
     },
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Mobilität</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Verkehr Berlin</a>",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -2286,7 +2337,7 @@
       "name": "Route",
       "flyer": "Flyer"
     },
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Mobilität</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Verkehr Berlin</a>",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -2306,7 +2357,7 @@
       "name": "Route",
       "flyer": "Flyer"
     },
-    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Mobilität</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://www.berlin.de/sen/uvk/verkehr/verkehrsplanung/radverkehr/radverkehrsnetz/radrouten/\" target=\"_blank\">Senatsverwaltung für Verkehr Berlin</a>",
     "legendURL": "",
     "gfiTheme": "default",
     "datasets": [
@@ -2367,7 +2418,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=teudtv&LEGEND_OPTIONS=forceLabels:on",
@@ -2453,9 +2504,9 @@
   {
     "id":"luftschadstoff_prognose_lines_no2",
     "name":"Luftschadstoff-Prognose NO₂ Straßennetz",
-    "url": "https://api.viz.berlin.de/geoserver/mdh/ows?",
+    "url": "https://api.viz.berlin.de/geoserver/mdh/ows",
     "typ":"WMS",
-    "layers":"umwelt_lines_no2",
+    "layers":"inwt_wmst_no2",
     "format":"image/png",
     "version":"1.1.1",
     "singleTile": true,
@@ -2463,12 +2514,13 @@
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
+    "time": true,
     "minScale": "0",
     "maxScale": "3000000",
     "layerAttribution": "Datenquelle: <a href=\"https://api.fairq.inwt-statistics.de/docs#/\" target=\"_blank\">INWT Statistics GmbH, Forecasting Air Quality</a>",
     "cache": true,
     "epsg": "EPSG:25833",
-    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=umwelt_lines_no2&LEGEND_OPTIONS=forceLabels:on",
+    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=inwt_wmst_no2&LEGEND_OPTIONS=forceLabels:on",
     "urlIsVisible": true,
     "infoFormat":"text/xml",
 
@@ -2481,8 +2533,8 @@
         "uom": "µg/m³",
         "titleField": "strassenna",
         "threshold": [
-          {"value": 0, "color": "#548dd4", "rating": "Sehr gut"},
-          {"value": 10, "color": "#dbe5f1", "rating": "Gut"},
+          {"value": 0, "color": "#0d4d8d", "rating": "Sehr gut"},
+          {"value": 10, "color": "#6494e4", "rating": "Gut"},
           {"value": 25, "color": "#ffff00", "rating": "Befriedigend"},
           {"value": 37.5, "color": "#ff7c80", "rating": "Ausreichend"},
           {"value": 50, "color": "#ff0000", "rating": "Schlecht"}
@@ -2501,9 +2553,9 @@
   {
     "id":"luftschadstoff_prognose_lines_pm10",
     "name":"Luftschadstoff-Prognose PM₁₀ Straßennetz",
-    "url": "https://api.viz.berlin.de/geoserver/mdh/ows?",
+    "url": "https://api.viz.berlin.de/geoserver/mdh/ows",
     "typ":"WMS",
-    "layers":"umwelt_lines_pm10",
+    "layers":"inwt_wmst_pm10",
     "format":"image/png",
     "version":"1.1.1",
     "singleTile": true,
@@ -2511,12 +2563,13 @@
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
+    "time": true,
     "minScale": "0",
     "maxScale": "3000000",
     "layerAttribution": "Datenquelle: <a href=\"https://api.fairq.inwt-statistics.de/docs#/\" target=\"_blank\">INWT Statistics GmbH, Forecasting Air Quality</a>",
     "cache": true,
     "epsg": "EPSG:25833",
-    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=umwelt_lines_pm10&LEGEND_OPTIONS=forceLabels:on",
+    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=inwt_wmst_pm10&LEGEND_OPTIONS=forceLabels:on",
     "urlIsVisible": true,
     "infoFormat":"text/xml",
 
@@ -2529,8 +2582,8 @@
         "uom": "µg/m³",
         "titleField": "strassenna",
         "threshold": [
-          {"value": 0, "color": "#548dd4", "rating": "Sehr gut"},
-          {"value": 15, "color": "#dbe5f1", "rating": "Gut"},
+          {"value": 0, "color": "#0d4d8d", "rating": "Sehr gut"},
+          {"value": 15, "color": "#6494e4", "rating": "Gut"},
           {"value": 25, "color": "#ffff00", "rating": "Befriedigend"},
           {"value": 35, "color": "#ff7c80", "rating": "Ausreichend"},
           {"value": 45, "color": "#ff0000", "rating": "Schlecht"}
@@ -2549,9 +2602,9 @@
   {
     "id":"luftschadstoff_prognose_lines_pm2_5",
     "name":"Luftschadstoff-Prognose PM₂,₅ Straßennetz",
-    "url": "https://api.viz.berlin.de/geoserver/mdh/ows?",
+    "url": "https://api.viz.berlin.de/geoserver/mdh/ows",
     "typ":"WMS",
-    "layers":"umwelt_lines_pm2_5",
+    "layers":"inwt_wmst_pm2_5",
     "format":"image/png",
     "version":"1.1.1",
     "singleTile": true,
@@ -2559,12 +2612,13 @@
     "transparency": 0,
     "tilesize": "512",
     "gutter": "0",
+    "time": true,
     "minScale": "0",
     "maxScale": "3000000",
     "layerAttribution": "Datenquelle: <a href=\"https://api.fairq.inwt-statistics.de/docs#/\" target=\"_blank\">INWT Statistics GmbH, Forecasting Air Quality</a>",
     "cache": true,
     "epsg": "EPSG:25833",
-    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=umwelt_lines_pm2_5&LEGEND_OPTIONS=forceLabels:on",
+    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=inwt_wmst_pm2_5&LEGEND_OPTIONS=forceLabels:on",
     "urlIsVisible": true,
     "infoFormat":"text/xml",
 
@@ -2577,8 +2631,8 @@
         "uom": "µg/m³",
         "titleField": "strassenna",
         "threshold": [
-          {"value": 0, "color": "#548dd4", "rating": "Sehr gut"},
-          {"value": 5, "color": "#dbe5f1", "rating": "Gut"},
+          {"value": 0, "color": "#0d4d8d", "rating": "Sehr gut"},
+          {"value": 5, "color": "#6494e4", "rating": "Gut"},
           {"value": 10, "color": "#ffff00", "rating": "Befriedigend"},
           {"value": 20, "color": "#ff7c80", "rating": "Ausreichend"},
           {"value": 25, "color": "#ff0000", "rating": "Schlecht"}
@@ -2627,8 +2681,8 @@
         "detailField": "plr_id",
         "detailLabel": "LOR",
         "threshold": [
-          {"value": 0, "color": "#548dd4", "rating": "Sehr gut"},
-          {"value": 10, "color": "#dbe5f1", "rating": "Gut"},
+          {"value": 0, "color": "#0d4d8d", "rating": "Sehr gut"},
+          {"value": 10, "color": "#6494e4", "rating": "Gut"},
           {"value": 25, "color": "#ffff00", "rating": "Befriedigend"},
           {"value": 37.5, "color": "#ff7c80", "rating": "Ausreichend"},
           {"value": 50, "color": "#ff0000", "rating": "Schlecht"}
@@ -2677,8 +2731,8 @@
         "detailField": "plr_id",
         "detailLabel": "LOR",
         "threshold": [
-          {"value": 0, "color": "#548dd4", "rating": "Sehr gut"},
-          {"value": 15, "color": "#dbe5f1", "rating": "Gut"},
+          {"value": 0, "color": "#0d4d8d", "rating": "Sehr gut"},
+          {"value": 15, "color": "#6494e4", "rating": "Gut"},
           {"value": 25, "color": "#ffff00", "rating": "Befriedigend"},
           {"value": 35, "color": "#ff7c80", "rating": "Ausreichend"},
           {"value": 45, "color": "#ff0000", "rating": "Schlecht"}
@@ -2727,8 +2781,8 @@
         "detailField": "plr_id",
         "detailLabel": "LOR",
         "threshold": [
-          {"value": 0, "color": "#548dd4", "rating": "Sehr gut"},
-          {"value": 5, "color": "#dbe5f1", "rating": "Gut"},
+          {"value": 0, "color": "#0d4d8d", "rating": "Sehr gut"},
+          {"value": 5, "color": "#6494e4", "rating": "Gut"},
           {"value": 10, "color": "#ffff00", "rating": "Befriedigend"},
           {"value": 20, "color": "#ff7c80", "rating": "Ausreichend"},
           {"value": 25, "color": "#ff0000", "rating": "Schlecht"}
@@ -2759,7 +2813,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_1&LEGEND_OPTIONS=forceLabels:on",
@@ -2800,7 +2854,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_2&LEGEND_OPTIONS=forceLabels:on",
@@ -2841,7 +2895,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_3&LEGEND_OPTIONS=forceLabels:on",
@@ -2882,7 +2936,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_4&LEGEND_OPTIONS=forceLabels:on",
@@ -2923,7 +2977,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_5&LEGEND_OPTIONS=forceLabels:on",
@@ -2964,7 +3018,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_6&LEGEND_OPTIONS=forceLabels:on",
@@ -3005,7 +3059,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_7&LEGEND_OPTIONS=forceLabels:on",
@@ -3046,7 +3100,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_8&LEGEND_OPTIONS=forceLabels:on",
@@ -3087,7 +3141,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_9&LEGEND_OPTIONS=forceLabels:on",
@@ -3128,7 +3182,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_line_10&LEGEND_OPTIONS=forceLabels:on",
@@ -3169,7 +3223,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_1&LEGEND_OPTIONS=forceLabels:on",
@@ -3203,7 +3257,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_2&LEGEND_OPTIONS=forceLabels:on",
@@ -3237,7 +3291,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_3&LEGEND_OPTIONS=forceLabels:on",
@@ -3271,7 +3325,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_4&LEGEND_OPTIONS=forceLabels:on",
@@ -3305,7 +3359,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_5&LEGEND_OPTIONS=forceLabels:on",
@@ -3339,7 +3393,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_6&LEGEND_OPTIONS=forceLabels:on",
@@ -3373,7 +3427,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_7&LEGEND_OPTIONS=forceLabels:on",
@@ -3407,7 +3461,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_8&LEGEND_OPTIONS=forceLabels:on",
@@ -3441,7 +3495,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_9&LEGEND_OPTIONS=forceLabels:on",
@@ -3475,7 +3529,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_starts_10&LEGEND_OPTIONS=forceLabels:on",
@@ -3509,7 +3563,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_1&LEGEND_OPTIONS=forceLabels:on",
@@ -3543,7 +3597,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_2&LEGEND_OPTIONS=forceLabels:on",
@@ -3577,7 +3631,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_3&LEGEND_OPTIONS=forceLabels:on",
@@ -3611,7 +3665,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_4&LEGEND_OPTIONS=forceLabels:on",
@@ -3645,7 +3699,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_5&LEGEND_OPTIONS=forceLabels:on",
@@ -3679,7 +3733,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_6&LEGEND_OPTIONS=forceLabels:on",
@@ -3713,7 +3767,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_7&LEGEND_OPTIONS=forceLabels:on",
@@ -3747,7 +3801,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_8&LEGEND_OPTIONS=forceLabels:on",
@@ -3781,7 +3835,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_9&LEGEND_OPTIONS=forceLabels:on",
@@ -3815,7 +3869,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=stauschwerpunkte_polygon_ziele_10&LEGEND_OPTIONS=forceLabels:on",
@@ -3849,7 +3903,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=parkdaten&LEGEND_OPTIONS=forceLabels:on",
@@ -3872,7 +3926,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=parkdaten_carsharing&LEGEND_OPTIONS=forceLabels:on",
@@ -3895,7 +3949,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=parkdaten_bewohnerparkausweise&LEGEND_OPTIONS=forceLabels:on",
@@ -3918,7 +3972,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=parkdaten_schwerbehinderte&LEGEND_OPTIONS=forceLabels:on",
@@ -3929,10 +3983,10 @@
   {
     "id": "parkraumdaten_wfs",
     "name": "Parkdaten",
-    "url": "https://api.viz.berlin.de/geoserver/parkdaten/wfs",
+    "url": "https://gdi.berlin.de/services/wfs/parkplaetze",
     "typ": "WFS",
-    "featureType": "parkraumkartierung",
-    "featureNS": "parkdaten",
+    "featureType": "parkplaetze",
+    "featureNS": "",
     "styleGeometryType": "Polygon",
     "format": "image/png",
     "version": "1.1.0",
@@ -3966,24 +4020,24 @@
       "zone": "Zone"
     },
     "gfiTheme": "default",
-    "layerAttribution": "Quelle: Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt / Lizenz:&nbsp;<a href=\"https://www.govdata.de/dl-de/by-2-0\" target=\"_blank\">Datenlizenz Deutschland - Namensnennung - Version 2.0</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "featureCount": "1",
     "epsg": "EPSG:25833",
     "datasets": [
       {
         "md_id": "parkraumdaten",
-        "md_name": "Parkraumkartierung",
+        "md_name": "Straßenseitiges Parken (innerhalb S-Bahnring)",
         "csw_url": "https://api.viz.berlin.de/csw"
       }
     ]
   },
   {
     "id": "parkraumdaten",
-    "name": "Parkraumkatierung",
-    "url": "https://api.viz.berlin.de/geoserver/parkdaten/wms",
+    "name": "Straßenseitiges Parken",
+    "url": "https://gdi.berlin.de/services/wms/parkplaetze",
     "typ": "WMS",
-    "layers": "parkraumkartierung",
+    "layers": "parkplaetze",
     "format": "image/png",
     "version": "1.1.1",
     "singleTile": true,
@@ -3991,12 +4045,10 @@
     "transparency": 20,
     "tilesize": "512",
     "gutter": "0",
-    "minScale": "0",
-    "maxScale": "3000000",
-    "layerAttribution": "Quelle: Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt / Lizenz:&nbsp;<a href=\"https://www.govdata.de/dl-de/by-2-0\" target=\"_blank\">Datenlizenz Deutschland - Namensnennung - Version 2.0</a>",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "epsg": "EPSG:25833",
-    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=parkdaten&LEGEND_OPTIONS=forceLabels:on",
+    "legend": "https://gdi.berlin.de/services/wms/parkplaetze?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=500&height=454&layer=parkplaetze",
     "urlIsVisible": false,
     "infoFormat": "text/xml",
     "gfiAttributes": {
@@ -4024,7 +4076,44 @@
     "datasets": [
       {
         "md_id": "parkraumdaten",
-        "md_name": "Parkraumkartierung",
+        "md_name": "Straßenseitiges Parken (innerhalb S-Bahnring)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "parkraumdaten_aussen",
+    "name": "Parkraumkatierung",
+    "url": "https://gdi.berlin.de/services/wms/parkplaetze",
+    "typ": "WMS",
+    "layers": "parkplaetze_aussen",
+    "format": "image/png",
+    "version": "1.1.1",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 20,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "https://gdi.berlin.de/services/wms/parkplaetze?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=500&height=454&layer=parkplaetze_aussen",
+    "urlIsVisible": false,
+    "infoFormat": "text/xml",
+    "gfiAttributes": {
+      "ausrichtung": "Ausrichtung",
+      "strassenname": "Straßenname",
+      "zone": "Zone",
+      "anzahl_parkplaetze": "Anzahl Parkplätze",
+      "category": "Kategorie",
+      "geltungszeit_ladezone": "Geltungszeit Ladezone",
+      "ladezone_einschraenkungen": "Einschränkungen Ladezone",
+      "oeffentlichesstrassenland": "Öffentliches Straßenland"
+    },
+    "datasets": [
+      {
+        "md_id": "parkraumdaten_aussen",
+        "md_name": "Straßenseitiges Parken (außerhalb S-Bahnring)",
         "csw_url": "https://api.viz.berlin.de/csw"
       }
     ]
@@ -4044,7 +4133,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Datenquelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Datenquelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=umweltzone&LEGEND_OPTIONS=forceLabels:on",
@@ -4104,7 +4193,7 @@
     "gutter": "0",
     "minScale": "0",
     "maxScale": "3000000",
-    "layerAttribution": "Datenquelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "layerAttribution": "Datenquelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
     "cache": true,
     "epsg": "EPSG:25833",
     "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=bezirke_parken&LEGEND_OPTIONS=forceLabels:on",
@@ -4146,5 +4235,834 @@
     "transparent": true,
     "singleTile": true,
     "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/\" target=\"_blank\">Geoportal Land Berlin</a>"
+  },
+  {
+    "id": "verkehrslage_gwc",
+    "name": "Verkehrslage",
+    "capabilitiesUrl": "https://api.viz.berlin.de/geoserver/mdh/gwc/service/wmts?SERVICE=WMTS&request=getCapabilities",
+    "typ": "WMTS",
+    "layers": "vmzlos-step",
+    "epsg": "EPSG:900913",
+    "optionsFromCapabilities": true,
+    "layerAttribution": "Darstellung: Senatsverwaltung für Verkehr Berlin; Datengrundlage: VMZ Berlin Betreibergesellschaft mbH / HERE Europe B.V.",
+    "urlIsVisible": false,
+    "legendURL": "https://api.viz.berlin.de/geoserver/www/legende_los.png",
+    "datasets": [
+      {
+        "md_id": "verkehrslage",
+        "md_name": "Verkehrslage",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "thermiCam",
+    "name": "Wärmebildkamera",
+    "url": "https://api.viz.berlin.de/FROST-Server-ThermiCam",
+    "typ": "SensorThings",
+    "version": "1.1",
+    "searchField": [
+      "cameraId",
+      "position"
+    ],
+    "mqttOptions": false,
+    "gfiAttributes": {},
+    "layerAttribution": "Quelle: Senatsverwaltung für Verkehr Berlin",
+    "legendURL": "",
+    "urlParameter": {
+      "select": "@iot.id,name,description,properties",
+      "expand": "Locations($select=location)"
+    },
+    "showNoDataValue": true,
+    "gfiTheme": {
+      "name": "sensorChart",
+      "params": {
+        "headerProperties": {
+          "laneLabel": {
+            "name": "Fahrspur",
+            "isSelect": true,
+            "isMultiple": true,
+            "default": "Messquerschnitt"
+          },
+          "periodLengthLabel": {
+            "name": "Zeitliche Auflösung",
+            "isSelect": true,
+            "default": "Stunde"
+          },
+          "vehicleLabel": {
+            "name": "Fahrzeugklasse",
+            "isSelect": true,
+            "isMultiple": true,
+            "isSelectAll": true,
+            "default": "KFZ"
+          },
+          "measurement": {
+            "name": "Messung",
+            "isSelect": true,
+            "default": "Anzahl",
+            "infoText": "Angaben zur Geschwindigkeit beziehen sich auf die Durchschnittsgeschwindigkeit des jeweiligen Zeitraums."
+          }
+        },
+        "headerPhotos": false,
+        "archiveStartDate": "2015-01-01",
+        "dayStartOffset": 0,
+        "weekStartOffset": 3,
+        "meansOfTransports": [
+          {
+            "id": "Anzahl",
+            "type": "counting",
+            "label": "Anzahl"
+          }
+        ],
+        "defaultLabelField": "measurement",
+        "intervals": {
+          "field": "periodLengthLabel",
+          "values": {
+            "5 Minuten": {
+              "unit": "minutes",
+              "value": 5,
+              "startOf": "day",
+              "defaultLength": 1,
+              "maxLength": 30
+            },
+            "Stunde": {
+              "unit": "hours",
+              "value": 1,
+              "startOf": "day",
+              "defaultLength": 1,
+              "maxLength": 366
+            },
+            "Tag": {
+              "unit": "days",
+              "value": 1,
+              "startOf": "day",
+              "defaultLength": 7,
+              "maxLength": 3660
+            },
+            "Woche": {
+              "unit": "days",
+              "value": 7,
+              "startOf": "isoWeek",
+              "selectWeek": true,
+              "defaultLength": 52,
+              "maxLength": 520
+            },
+            "Monat": {
+              "unit": "months",
+              "value": 1,
+              "startOf": "month",
+              "defaultLength": 12,
+              "maxLength": 120
+            },
+            "Jahr": {
+              "unit": "years",
+              "value": 1,
+              "startOf": "year",
+              "defaultLength": 5,
+              "maxLength": 20
+            }
+          }
+        },
+        "infoSelects": {
+          "singleValues": {
+            "measurement": "Geschwindigkeit"
+          },
+          "day": {
+            "periodLengthLabel": "Tag"
+          },
+          "week": {
+            "periodLengthLabel": "Woche"
+          },
+          "month": {
+            "periodLengthLabel": "Tag"
+          },
+          "year": {
+            "periodLengthLabel": "Tag"
+          }
+        }
+      }
+    },
+    "epsg": "EPSG:4326",
+    "urlIsVisible": false,
+    "datasets": [
+      {
+        "md_id": "thermicams",
+        "md_name": "Verkehrsdetektion - Wärmebildkamera (BETA)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "chargecloud",
+    "name": "Ladestationen",
+    "url": "https://api.viz.berlin.de/e-infoplattform/chargecloud/lade-standort/geojsondps",
+    "typ" : "GeoJSON",
+    "searchField": [
+      "address"
+    ],
+    "gfiAttributes": {
+      "operatorName": "Betreiber",
+      "address": "Adresse",
+      "plz": "PLZ",
+      "city": "Stadt",
+      "operatorHotline": "Betreiber Rufnummer",
+      "oeffentlicherRaum": "Öffentlicher Raum",
+      "beschilderungVorhanden": "Beschilderung vorhanden",
+      "ladeSaeulen": {
+        "type": "array",
+        "name": "Ladepunkt",
+        "elements": {
+          "type": "object",
+          "children": {
+            "evseId": "EVSE Id",
+            "status": "Status",
+            "uebernutzungsgebuehrStrombasiert": "Kosten Strombasiert",
+            "uebernutzungsgebuehrZeitbasiert": "Kosten Zeitbasiert",
+            "uebernutzungsgebuehrEinmalig": "Kosten einmalig",
+            "type": "Typ",
+            "barrierefrei": "Barrierefrei",
+            "ladeAnschluesse": {
+              "type": "array",
+              "name": "Ladeanschluss",
+              "elements": {
+                "type": "object",
+                "children": {
+                  "typ": "Typ",
+                  "steckertyp": "Steckertyp",
+                  "maxLadeleistungKw": {
+                    "name": "Max. Ladeleistung",
+                    "suffix": "kW"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "layerAttribution": "",
+    "legend" : "../resources/img/chargecloud_legende.png",
+    "gfiTheme": "complexObject"
+  },
+  {
+    "id":"radplus_2023",
+    "name":"Rad+ 2023",
+    "url": "https://api.viz.berlin.de/geoserver/mdh/ows?",
+    "typ":"WMS",
+    "layers":"radplus_2023_view",
+    "format":"image/png",
+    "version":"1.1.1",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "minScale": "0",
+    "maxScale": "100000",
+    "layerAttribution": "Datenquelle: <a href=\"https://radplus.bahnhof.de/\" target=\"_blank\">DB Rad+</a>",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=radplus_2023_view&LEGEND_OPTIONS=forceLabels:on",
+    "urlIsVisible": true,
+    "infoFormat":"text/xml",
+    "gfiAttributes": {
+      "name": "Straße",
+      "route_count": "Anzahl",
+      "speed": {
+        "name": "Mittlere  Geschwindigkeit",
+        "suffix": "km/h"
+      },
+      "type": "Straßentyp"
+    },
+    "gfiTheme": "default",
+    "featureCount":5,
+    "datasets": [
+      {
+        "md_id": "radplus",
+        "md_name": "Rad+",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id":"radplus_2024",
+    "name":"Rad+ 2024",
+    "url": "https://api.viz.berlin.de/geoserver/mdh/ows?",
+    "typ":"WMS",
+    "layers":"radplus_2024_view",
+    "format":"image/png",
+    "version":"1.1.1",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "minScale": "0",
+    "maxScale": "100000",
+    "layerAttribution": "Datenquelle: <a href=\"https://radplus.bahnhof.de/\" target=\"_blank\">DB Rad+</a>",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/mdh/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=radplus_2024_view&LEGEND_OPTIONS=forceLabels:on",
+    "urlIsVisible": true,
+    "infoFormat":"text/xml",
+    "gfiAttributes": {
+      "name": "Straße",
+      "route_count": "Anzahl",
+      "speed": {
+        "name": "Mittlere  Geschwindigkeit",
+        "suffix": "km/h"
+      },
+      "type": "Straßentyp"
+    },
+    "gfiTheme": "default",
+    "featureCount":5,
+    "datasets": [
+      {
+        "md_id": "radplus",
+        "md_name": "Rad+",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id":"euvm_wv_strecken",
+    "name":"Strecken KEP-ähnlicher-Verkehre",
+    "url": "https://api.viz.berlin.de/geoserver/euvm/ows",
+    "typ":"WMS",
+    "layers":"wv_strecken",
+    "format":"image/png",
+    "version":"1.1.1",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/euvm/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=wv_strecken",
+    "urlIsVisible": true,
+    "infoFormat":"text/xml",
+    "gfiAttributes": {
+      "roadname": "Straße",
+      "anzahl_kep_trips": "Anzahl Trips"
+    },
+    "gfiTheme": "default",
+    "featureCount":20,
+    "datasets": [
+      {
+        "md_id": "wirtschaftsverkehr",
+        "md_name": "Strecken KEP-ähnlicher-Verkehre",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id":"euvm_pendlerstreckenmiv",
+    "name":"Pendlerstrecken",
+    "url": "https://api.viz.berlin.de/geoserver/euvm/ows",
+    "typ":"WMS",
+    "layers":"pendlerstreckenmiv",
+    "format":"image/png",
+    "version":"1.1.1",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/euvm/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=pendlerstreckenmiv",
+    "urlIsVisible": true,
+    "infoFormat":"text/xml",
+    "gfiAttributes": {
+      "roadname": "Straße",
+      "count": "Anzahl Trips"
+    },
+    "gfiTheme": "default",
+    "featureCount":20,
+    "datasets": [
+      {
+        "md_id": "pendler",
+        "md_name": "Pendlerstrecken",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id":"euvm_fussverkehr_start",
+    "name":"Fußverkehr Start",
+    "url": "https://api.viz.berlin.de/geoserver/euvm/ows",
+    "typ":"WMS",
+    "layers":"fussverkehr_start",
+    "format":"image/png",
+    "version":"1.1.1",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 40,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/euvm/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=fussverkehr_start",
+    "urlIsVisible": true,
+    "infoFormat":"text/xml",
+    "gfiAttributes": {
+      "name": "Teilverkehrszele",
+      "start": "Anzahl"
+    },
+    "gfiTheme": "default",
+    "featureCount":20,
+    "datasets": [
+      {
+        "md_id": "fussverkehr_start",
+        "md_name": "Fußverkehr Start",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id":"euvm_fussverkehr_ziel",
+    "name":"Fußverkehr Ziel",
+    "url": "https://api.viz.berlin.de/geoserver/euvm/ows",
+    "typ":"WMS",
+    "layers":"fussverkehr_ziel",
+    "format":"image/png",
+    "version":"1.1.1",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 40,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/euvm/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=fussverkehr_ziel",
+    "urlIsVisible": true,
+    "infoFormat":"text/xml",
+    "gfiAttributes": {
+      "name": "Straße",
+      "ziel": "Anzahl"
+    },
+    "gfiTheme": "default",
+    "featureCount":20,
+    "datasets": [
+      {
+        "md_id": "fussverkehr_ziel",
+        "md_name": "Fußverkehr Ziel",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id":"euvm_radverkehr_start",
+    "name":"Radverkehr Start",
+    "url": "https://api.viz.berlin.de/geoserver/euvm/ows",
+    "typ":"WMS",
+    "layers":"radverkehr_start",
+    "format":"image/png",
+    "version":"1.1.1",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 40,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/euvm/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=radverkehr_start",
+    "urlIsVisible": true,
+    "infoFormat":"text/xml",
+    "gfiAttributes": {
+      "name": "Teilverkehrszele",
+      "start": "Anzahl"
+    },
+    "gfiTheme": "default",
+    "featureCount":20,
+    "datasets": [
+      {
+        "md_id": "radverkehr_start",
+        "md_name": "Radverkehr Start",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id":"euvm_radverkehr_ziel",
+    "name":"Radverkehr Ziel",
+    "url": "https://api.viz.berlin.de/geoserver/euvm/ows",
+    "typ":"WMS",
+    "layers":"radverkehr_ziel",
+    "format":"image/png",
+    "version":"1.1.1",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 40,
+    "tilesize": "512",
+    "gutter": "0",
+    "layerAttribution": "Quelle: Verkehrsinformationszentrale Berlin (Senatsverwaltung für Mobilität)",
+    "cache": true,
+    "epsg": "EPSG:25833",
+    "legend": "http://api.viz.berlin.de/geoserver/euvm/ows?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=radverkehr_ziel",
+    "urlIsVisible": true,
+    "infoFormat":"text/xml",
+    "gfiAttributes": {
+      "name": "Teilverkehrszele",
+      "ziel": "Anzahl"
+    },
+    "gfiTheme": "default",
+    "featureCount":20,
+    "datasets": [
+      {
+        "md_id": "radverkehr_ziel",
+        "md_name": "Radverkehr Ziel",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "fahrradreparatur",
+    "name": "Fahrradreparaturstationen",
+    "url": "https://gdi.berlin.de/services/wms/fahrradreparatur",
+    "typ": "WMS",
+    "layers": "fahrradreparatur",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "standort": "Standort",
+      "bezirk": "Bezirk"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legend": "https://gdi.berlin.de/services/wms/fahrradreparatur?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=281&height=61&layer=fahrradreparatur",
+    "cache": true,
+    "featureCount": "1",
+    "datasets": [
+      {
+        "md_id": "fahrradreparatur",
+        "md_name": "Fahrradreparaturstationen",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "busstopp_gestoert",
+    "name": "Bushaltestellen bei Umleitung",
+    "url": "https://gdi.berlin.de/services/wms/oepnv_gestoert",
+    "typ": "WMS",
+    "layers": "a_busstopp_gestoert",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "hstname": "Haltestelle",
+      "anzlinien": "Anzahl Linien",
+      "code": "Codenummer der Haltestelle "
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/oepnv_gestoert?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=300&height=50&layer=a_busstopp_gestoert"],
+    "cache": true,
+    "featureCount": "10",
+    "datasets": [
+      {
+        "md_id": "oepnv_gestoert",
+        "md_name": "BVG: ÖPNV-Netz bei Umleitungen (Straßenbahn- und Busnetz)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "tramstopp_gestoert",
+    "name": "Straßenbahnhaltestellen bei Umleitung",
+    "url": "https://gdi.berlin.de/services/wms/oepnv_gestoert",
+    "typ": "WMS",
+    "layers": "b_tramstopp_gestoert",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "hstname": "Haltestelle",
+      "anzlinien": "Anzahl Linien",
+      "code": "Codenummer der Haltestelle "
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/oepnv_gestoert?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=300&height=50&layer=b_tramstopp_gestoert"],
+    "cache": true,
+    "featureCount": "10",
+    "datasets": [
+      {
+        "md_id": "oepnv_gestoert",
+        "md_name": "BVG: ÖPNV-Netz bei Umleitungen (Straßenbahn- und Busnetz)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "buslinien_gestoert",
+    "name": "Buslinien bei Umleitung",
+    "url": "https://gdi.berlin.de/services/wms/oepnv_gestoert",
+    "typ": "WMS",
+    "layers": "c_buslinien_gestoert",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "linename": "Linienname",
+      "starthst": "Starthaltestelle",
+      "endhst": "Endhaltestelle",
+      "richtung": "Fahrtrichtung"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/oepnv_gestoert?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=300&height=50&layer=c_buslinien_gestoert"],
+    "cache": true,
+    "featureCount": "10",
+    "datasets": [
+      {
+        "md_id": "oepnv_gestoert",
+        "md_name": "BVG: ÖPNV-Netz bei Umleitungen (Straßenbahn- und Busnetz)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "tramlinien_gestoert",
+    "name": "Straßenbahnlinien bei Umleitung",
+    "url": "https://gdi.berlin.de/services/wms/oepnv_gestoert",
+    "typ": "WMS",
+    "layers": "d_tramlinien_gestoert",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "linename": "Linienname",
+      "starthst": "Starthaltestelle",
+      "endhst": "Endhaltestelle",
+      "richtung": "Fahrtrichtung"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/oepnv_gestoert?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=300&height=50&layer=d_tramlinien_gestoert"],
+    "cache": true,
+    "featureCount": "10",
+    "datasets": [
+      {
+        "md_id": "oepnv_gestoert",
+        "md_name": "BVG: ÖPNV-Netz bei Umleitungen (Straßenbahn- und Busnetz)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "busstopp",
+    "name": "Bushaltestellen",
+    "url": "https://gdi.berlin.de/services/wms/oepnv_ungestoert",
+    "typ": "WMS",
+    "layers": "a_busstopp",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "hstname": "Haltestelle",
+      "anzlinien": "Anzahl Linien",
+      "code": "Codenummer der Haltestelle "
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/oepnv_ungestoert?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=300&height=50&layer=a_busstopp"],
+    "cache": true,
+    "featureCount": "10",
+    "datasets": [
+      {
+        "md_id": "oepnv_ungestoert",
+        "md_name": "BVG: ÖPNV-Netz (Straßenbahn- und Busnetz)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "tramstopp",
+    "name": "Straßenbahnhaltestellen",
+    "url": "https://gdi.berlin.de/services/wms/oepnv_ungestoert",
+    "typ": "WMS",
+    "layers": "b_tramstopp",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "hstname": "Haltestelle",
+      "anzlinien": "Anzahl Linien",
+      "code": "Codenummer der Haltestelle "
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/oepnv_ungestoert?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=300&height=50&layer=b_tramstopp"],
+    "cache": true,
+    "featureCount": "10",
+    "datasets": [
+      {
+        "md_id": "oepnv_ungestoert",
+        "md_name": "BVG: ÖPNV-Netz (Straßenbahn- und Busnetz)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "buslinien",
+    "name": "Buslinien",
+    "url": "https://gdi.berlin.de/services/wms/oepnv_ungestoert",
+    "typ": "WMS",
+    "layers": "c_buslinien",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "linename": "Linienname",
+      "starthst": "Starthaltestelle",
+      "endhst": "Endhaltestelle",
+      "richtung": "Fahrtrichtung"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/oepnv_ungestoert?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=300&height=50&layer=c_buslinien"],
+    "cache": true,
+    "featureCount": "10",
+    "datasets": [
+      {
+        "md_id": "oepnv_ungestoert",
+        "md_name": "BVG: ÖPNV-Netz (Straßenbahn- und Busnetz)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "tramlinien",
+    "name": "Straßenbahnlinien",
+    "url": "https://gdi.berlin.de/services/wms/oepnv_ungestoert",
+    "typ": "WMS",
+    "layers": "d_tramlinien",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": false,
+    "transparent": true,
+    "transparency": 0,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "linename": "Linienname",
+      "starthst": "Starthaltestelle",
+      "endhst": "Endhaltestelle",
+      "richtung": "Fahrtrichtung"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "legendURL": ["https://gdi.berlin.de/services/wms/oepnv_ungestoert?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=300&height=50&layer=d_tramlinien"],
+    "cache": true,
+    "featureCount": "10",
+    "datasets": [
+      {
+        "md_id": "oepnv_ungestoert",
+        "md_name": "BVG: ÖPNV-Netz (Straßenbahn- und Busnetz)",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "sbu_s_r_bahn",
+    "name": "ÖPNV-Bahnnetz: S- und Regionalbahn",
+    "url": "https://fbinter.stadt-berlin.de/fb/wms/senstadt/k_sbu",
+    "typ": "WMS",
+    "layers": "sbu_s_r_bahn",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "tilesize": "512",
+    "gutter": "0",
+    "minScale": "250",
+    "maxScale": "250000",
+    "gfiAttributes": "ignore",
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://fbinter.stadt-berlin.de/fb/index.jsp\" target=\"_blank\">FIS-Broker</a>",
+    "cache": true,
+    "featureCount": "1",
+    "epsg": "EPSG:25833",
+    "legendURL": "https://fbinter.stadt-berlin.de/fb_daten/legenden/stapl/planungsgrundlagen/l_sbu_bahnnetz_s-regionalbahn.png",
+    "datasets": [
+      {
+        "md_id": "sbu_s_r_bahn",
+        "md_name": "ÖPNV-Bahnnetz: S- und Regionalbahn",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
+  },
+  {
+    "id": "fahrradstrassen",
+    "name": "Fahrradstraßen",
+    "url": "https://gdi.berlin.de/services/wms/fahrradstrassen",
+    "typ": "WMS",
+    "layers": "fahrradstrassen",
+    "format": "image/png",
+    "version": "1.3.0",
+    "singleTile": true,
+    "transparent": true,
+    "tilesize": "512",
+    "gutter": "0",
+    "gfiAttributes": {
+      "strasse": "Straße",
+      "bezirk": "Bezirk",
+      "freigabe": "Freigabe",
+      "abschnitt": "Abschnitt"
+    },
+    "gfiTheme": "default",
+    "layerAttribution": "Quelle:&nbsp;<a href=\"https://gdi.berlin.de/viewer/main/\" target=\"_blank\">Geoportal Berlin</a>",
+    "cache": true,
+    "featureCount": "10",
+    "epsg": "EPSG:25833",
+    "legendURL": "https://gdi.berlin.de/services/wms/fahrradstrassen?service=WMS&version=1.3.0&request=GetLegendGraphic&format=image%2Fpng&width=228&height=52&layer=fahrradstrassen",
+    "datasets": [
+      {
+        "md_id": "fahrradstrassen",
+        "md_name": "Fahrradstraßen",
+        "csw_url": "https://api.viz.berlin.de/csw"
+      }
+    ]
   }
 ]

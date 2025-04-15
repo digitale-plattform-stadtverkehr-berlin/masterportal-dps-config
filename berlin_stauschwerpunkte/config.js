@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 const Config = {
-    addons: ["trafficCount", "sensorChart", "verkehrsstaerken", "airpollution"],
+    addons: ["sensorChart", "verkehrsstaerken", "airpollution", "commuterFlows", "economicTransports"],
     ignoredKeys: ["BOUNDEDBY", "SHAPE", "SHAPE_LENGTH", "SHAPE_AREA", "OBJECTID", "GLOBALID", "GEOMETRY", "SHP", "SHP_AREA", "SHP_LENGTH", "GEOM"],
     wfsImgPath: "../resources/img/",
     namedProjections: [
@@ -46,7 +46,10 @@ const Config = {
         changeLanguageOnStartWhen: ["querystring"],
     },
     remoteInterface: {
-      postMessageUrl: "https://viz.berlin.de"
+      // postMessageUrl: "https://viz-dashboard.wemove.com"
+        //postMessageUrl: "http://localhost"
+        //postMessageUrl: "https://viz-relaunch.wemove.com"
+        postMessageUrl: "https://viz.berlin.de"
     },
     alerting: {
         fetchBroadcastUrl: "../resources/newsFeedPortalAlerts.json"
